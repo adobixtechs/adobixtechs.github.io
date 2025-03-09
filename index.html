@@ -13,11 +13,24 @@
             padding: 0;
             text-align: center;
             background-color: #f4f4f4;
+            transition: background-color 0.3s ease;
+        }
+        .top-bar {
+            background: #333;
+            color: white;
+            padding: 10px;
+            text-align: right;
+        }
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
         }
         header {
             background: #007bff;
             color: white;
             padding: 40px 20px;
+            animation: fadeIn 1s ease-in-out;
         }
         .btn {
             background: #ff5722;
@@ -27,16 +40,25 @@
             border-radius: 5px;
             display: inline-block;
             margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #e64a19;
         }
         #features {
             background: white;
             padding: 40px;
         }
         .feature {
-            margin: 20px 0;
+            margin: 20px auto;
             padding: 10px;
             background: #e3f2fd;
             border-radius: 10px;
+            max-width: 80%;
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: scale(1.05);
         }
         #download {
             padding: 40px;
@@ -50,6 +72,10 @@
             text-decoration: none;
             border-radius: 5px;
             margin: 10px;
+            transition: background 0.3s ease;
+        }
+        .store-btn:hover {
+            background: #555;
         }
         footer {
             background: #333;
@@ -61,13 +87,20 @@
             text-decoration: none;
             margin-left: 15px;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
+    <div class="top-bar">
+        <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+    </div>
+    
     <header>
         <h1>Track Your Expenses with Ease</h1>
         <p>The best way to manage your budget and save money</p>
-        <!-- <a href="#download" class="btn">Download Now</a> -->
     </header>
     
     <section id="features">
@@ -89,7 +122,6 @@
     <section id="download">
         <h2>Download the App</h2>
         <a href="https://play.google.com/store/apps/details?id=com.tools.expense_tracker" class="store-btn" target="_blank">Google Play</a>
-        <!-- <a href="#" class="store-btn">App Store</a> -->
     </section>
     
     <footer>
