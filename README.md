@@ -1,1 +1,0 @@
-# adobixtechs.github.io
