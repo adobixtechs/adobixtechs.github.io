@@ -1,0 +1,93 @@
+.body-contact-us {
+    font-family: "Ubuntu", sans-serif;
+    background-color: #202127;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-us-title {
+    font-size: 38px;
+}
+
+#contact-us-description {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.button-icons {
+    width: 20px;
+    height: auto;
+}
+
+.container-contact-us {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-ways-to-contact{
+    display: flex;
+    padding-top: 7%;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.way-button {
+    font-size: 20px;
+    padding: 0;
+    display: flex;
+    width: 243px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 7px;
+    background-color: #2E2F36;
+    color: white;
+}
+
+.text-on-way-buttons {
+    padding-left: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+@media (max-width: 767px) {
+    .body-contact-us {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    #contact-us-title {
+        font-size: 24px;
+        margin-right: 55%;
+    }
+
+    #contact-us-description {
+        padding: 0 5% 0 5%;
+    }
+
+    .container-contact-us {
+        height: 100%;
+    }
+
+    .container-ways-to-contact{
+        padding-top: 20%;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .way-button {
+        width: 90%;
+        margin-top: 10px;
+    }
+}
