@@ -1,0 +1,150 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.privacy-policy a {
+    font-size: 0.9rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Content Section */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    margin-top: 60px;
+    text-align: left;
+}
+
+.content {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.837);
+}
+
+.content h2 {
+    margin-bottom: 5px;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.837);
+} 
+
+.content p {
+    font-size: 1rem;
+    color: grey;
+}
+
+.content ul {
+    font-size: 1rem;
+    color: grey;
+    margin-left: 20px;
+}
+
+/* Footer Section */
+footer {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1rem;
+}
+
+.footer-links a:hover {
+    color: #f8b400;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+.social-icons a:hover {
+    color: #f8b400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column;  
+        text-align: center;
+    }
+
+    .content {
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box {
+        width: 90%;
+    }
+}
