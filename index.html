@@ -3,129 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Flow App</title>
+    <title>Expenses Flow: Expense & Budget Tracker</title>
     <link rel="icon" type="image/png" href="assets/icons/logo.png">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            background-color: #f4f4f4;
-            transition: background-color 0.3s ease;
+            padding: 20px;
         }
-        .top-bar {
-            background: #333;
-            color: white;
-            padding: 10px;
-            text-align: right;
-        }
-        .top-bar a {
-            color: white;
-            text-decoration: none;
-            margin-right: 20px;
-        }
+
+        /* Header Styles */
         header {
-            background: #007bff;
-            color: white;
-            padding: 40px 20px;
-            animation: fadeIn 1s ease-in-out;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
         }
-        .btn {
-            background: #ff5722;
-            color: white;
-            padding: 10px 20px;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-            transition: background 0.3s ease;
+            margin: 0 10px;
         }
-        .btn:hover {
-            background: #e64a19;
+
+        .privacy-policy a {
+            font-size: 0.9rem;
+            color: #fff;
+            text-decoration: none;
         }
-        #features {
-            background: white;
-            padding: 40px;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 100px;
+            text-align: left;
         }
-        .feature {
-            margin: 20px auto;
-            padding: 10px;
-            background: #e3f2fd;
+
+        .content {
+            flex: 1;
+            padding-right: 30px;
+        }
+
+        .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            max-width: 450px;
+            color: grey;
+        }
+
+        .google-play-btn img {
+            width: 150px;
+        }
+
+        .image-container img {
+            width: 550px;
+            max-width: 100%;
+        }
+
+        /* Features Section */
+        .features {
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature-box {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
             border-radius: 10px;
-            max-width: 80%;
-            transition: transform 0.3s ease;
+            text-align: center;
         }
-        .feature:hover {
-            transform: scale(1.05);
+
+        .feature-box i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #f8b400;
         }
-        #download {
-            padding: 40px;
-            background: #ffeb3b;
+
+        .feature-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
         }
-        .store-btn {
-            display: inline-block;
-            background: #333;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 10px;
-            transition: background 0.3s ease;
+
+        .feature-box p {
+            font-size: 0.9rem;
+            color: grey;
         }
-        .store-btn:hover {
-            background: #555;
-        }
+
+        /* Footer Section */
         footer {
-            background: #333;
-            color: white;
-            padding: 10px;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            margin-top: 50px;
+            text-align: center;
+            /* background: rgba(255, 255, 255, 0.1); */
+            border-radius: 10px;
         }
-        .privacy-policy {
-            color: white;
+
+        .footer-links a {
+            color: #fff;
             text-decoration: none;
-            margin-left: 15px;
+            margin: 0 10px;
+            font-size: 1rem;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+
+        .footer-links a:hover {
+            color: #f8b400;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+
+        .social-icons a:hover {
+            color: #f8b400;
+        }
+        
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 20px;
+                width: 100%;
+            }
+
+            .container {
+                flex-direction: column;  
+                text-align: center;
+            }
+
+            .content {
+                text-align: center;
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .image-container img {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .features-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-box {
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="top-bar">
-        <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
-    </div>
-    
+
     <header>
-        <h1>Track Your Expenses with Ease</h1>
-        <p>The best way to manage your budget and save money</p>
+        <a href="index.html", class="logo">Expenses Flow</a>
+        <!-- <div class="logo">Expenses Flow</div> -->
+        <div class="privacy-policy"><a href="privacy-policy.html">Privacy Policy</a></div>
     </header>
-    
-    <section id="features">
-        <h2>Why Choose Our App?</h2>
-        <div class="feature">
-            <h3>Easy Expense Tracking</h3>
-            <p>Record your expenses in a few taps.</p>
+
+    <div class="container">
+        <div class="content">
+            <h1>Expenses Flow: Expense & Budget Tracker</h1>
+            <p>Platforms where finance experts help you take control of your money by providing personalized budgeting plans that make your expense tracking and savings as efficient as possible.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.tools.expense_tracker" class="google-play-btn" target="_blank">
+                <img src="assets/icons/image.png" alt="Get it on Google Play">
+            </a>
         </div>
-        <div class="feature">
-            <h3>Budget Planning</h3>
-            <p>Set monthly budgets and track your spending.</p>
+        <div class="image-container">
+            <img src="assets/images/app-screenshot.png" alt="App Mockup">
         </div>
-        <div class="feature">
-            <h3>Financial Insights</h3>
-            <p>Get real-time reports and analytics.</p>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>App Features</h2>
+        <div class="features-container">
+            <div class="feature-box">
+                <i class="fas fa-chart-line"></i>
+                <h3>Budget Planner</h3>
+                <p>Set budgets for different categories and monitor your spending against them.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-money-bill-wave"></i>
+                <h3>Expense Tracking</h3>
+                <p>Track all your expenses in real-time with detailed analytics.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Privacy-First App</h3>
+                <p>Your data never leaves your device. No clouds, no servers, no peeping eyes.</p>
+            </div>
         </div>
     </section>
-    
-    <section id="download">
-        <h2>Download the App</h2>
-        <a href="https://play.google.com/store/apps/details?id=com.tools.expense_tracker" class="store-btn" target="_blank">Google Play</a>
-    </section>
-    
+
+    <!-- Footer Section -->
     <footer>
-        <p>Contact us: adobixtech@gmail.com <a href="privacy-policy.html" class="privacy-policy">Privacy Policy</a></p>
+        <footer>
+            <div class="footer-links">
+                <a href="#">About</a> | 
+                <a href="privacy-policy.html">Privacy Policy</a> | 
+                <a href="mailto:adobixtech@gmail.com">Contact</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/adobixtech", target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/adobix", target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/adobixtech", target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </footer>
+        <!-- <div class="footer-links">
+            <a href="#">About</a> | 
+            <a href="privacy-policy.html">Privacy Policy</a> | 
+            <a href="#">Contact</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div> -->
+      
     </footer>
+
+    <p style="font-size: 0.9rem; color: grey;">
+        © 2025 AdobixTech All rights reserved.
+    </p>
+
 </body>
 </html>
