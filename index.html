@@ -1,21 +1,131 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ExpenseFlow - Master Your Finances</title>
-    <meta name="description" content="Track, analyze, and optimize your finances with ExpenseFlow. Take control of your money like never before." />
-    <meta name="author" content="ExpenseFlow" />
-    <meta property="og:image" content="/og-image.png" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <script type="module" crossorigin src="/assets/index-DoUH_i2V.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DCpBnAVJ.css">
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Flow App</title>
+    <link rel="icon" type="image/png" href="assets/icons/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s ease;
+        }
+        .top-bar {
+            background: #333;
+            color: white;
+            padding: 10px;
+            text-align: right;
+        }
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 40px 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .btn {
+            background: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #e64a19;
+        }
+        #features {
+            background: white;
+            padding: 40px;
+        }
+        .feature {
+            margin: 20px auto;
+            padding: 10px;
+            background: #e3f2fd;
+            border-radius: 10px;
+            max-width: 80%;
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: scale(1.05);
+        }
+        #download {
+            padding: 40px;
+            background: #ffeb3b;
+        }
+        .store-btn {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background 0.3s ease;
+        }
+        .store-btn:hover {
+            background: #555;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 10px;
+        }
+        .privacy-policy {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+    </div>
+    
+    <header>
+        <h1>Track Your Expenses with Ease</h1>
+        <p>The best way to manage your budget and save money</p>
+    </header>
+    
+    <section id="features">
+        <h2>Why Choose Our App?</h2>
+        <div class="feature">
+            <h3>Easy Expense Tracking</h3>
+            <p>Record your expenses in a few taps.</p>
+        </div>
+        <div class="feature">
+            <h3>Budget Planning</h3>
+            <p>Set monthly budgets and track your spending.</p>
+        </div>
+        <div class="feature">
+            <h3>Financial Insights</h3>
+            <p>Get real-time reports and analytics.</p>
+        </div>
+    </section>
+    
+    <section id="download">
+        <h2>Download the App</h2>
+        <a href="https://play.google.com/store/apps/details?id=com.tools.expense_tracker" class="store-btn" target="_blank">Google Play</a>
+    </section>
+    
+    <footer>
+        <p>Contact us: adobixtech@gmail.com <a href="privacy-policy.html" class="privacy-policy">Privacy Policy</a></p>
+    </footer>
+</body>
 </html>
