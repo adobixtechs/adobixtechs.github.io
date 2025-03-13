@@ -46,12 +46,24 @@
             text-decoration: none;
             margin: 0 10px;
         }
+        .header-links {
+            font-size: 0.9rem;
+        }
+        .header-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .header-links a:hover {
+            color: #f8b400;
+        }
 
-        .privacy-policy a {
+
+        /* .privacy-policy a {
             font-size: 0.9rem;
             color: #fff;
             text-decoration: none;
-        }
+        } */
 
         .container {
             display: flex;
@@ -212,8 +224,13 @@
 
     <header>
         <a href="index.html", class="logo">Expenses Flow</a>
-        <!-- <div class="logo">Expenses Flow</div> -->
-        <div class="privacy-policy"><a href="privacy-policy.html">Privacy Policy</a></div>
+
+        <div class="header-links">
+            <a href="privacy-policy.html">Privacy Policy</a> | 
+            <a href="terms-and-conditions.html">Terms & Conditions</a>
+        </div>
+        
+        <!-- <div class="privacy-policy"><a href="privacy-policy.html">Privacy Policy</a></div> -->
     </header>
 
     <div class="container">
@@ -255,7 +272,7 @@
     <footer>
         <footer>
             <div class="footer-links">
-                <a href="#">About</a> | 
+                <a href="terms-and-conditions.html">Terms & Conditions</a> | 
                 <a href="privacy-policy.html">Privacy Policy</a> | 
                 <a href="mailto:adobixtech@gmail.com">Contact</a>
             </div>
