@@ -63,12 +63,14 @@ header {
 
 .content h1 {
     font-size: 2.5rem;
+    font-weight: lighter;
     margin-bottom: 10px;
     color: rgba(255, 255, 255, 0.837);
 }
 
 .content h2 {
     margin-bottom: 5px;
+    font-weight: lighter;
     margin-top: 20px;
     color: rgba(255, 255, 255, 0.837);
 } 
