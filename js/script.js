@@ -6,32 +6,27 @@ document.getElementById('header').innerHTML = `
             Expenses Flow
         </a>
         <div class="header-links">
-            <a href="index.html">Home</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms.html">Terms</a>
-            <a href="faq.html">FAQ</a>
+            <a href="index.html" class="${window.location.pathname.endsWith('index.html') ? 'active' : ''}">Home</a>
+            <a href="privacy-policy.html" class="${window.location.pathname.endsWith('privacy-policy.html') ? 'active' : ''}">Privacy Policy</a>
+            <a href="terms.html" class="${window.location.pathname.endsWith('terms.html') ? 'active' : ''}">Terms</a>
+            <a href="faq.html" class="${window.location.pathname.endsWith('faq.html') ? 'active' : ''}">FAQ</a>
         </div>
     </header>
 `;
 
+
 // Load Footer
 document.getElementById('footer').innerHTML = `
     <footer>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms.html">Terms</a>
-            <a href="faq.html">FAQ</a>
-        </div>
+
         <div class="social-icons">
-            <a href="https://play.google.com/store/apps/details?id=com.tools.expense_tracker" target="_blank">
-                <i class="fab fa-google-play"></i>
-            </a>
-            <a href="mailto:support@expensesflow.com">
+            <a href="https://www.linkedin.com/company/adobixtech", target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/adobix", target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:adobixtech@gmail.com" title="Contact Support">
                 <i class="fas fa-envelope"></i>
             </a>
         </div>
-        <p style="margin-top: 20px; color: #e0e0e0;">© 2024 Expenses Flow. All rights reserved.</p>
+        <p style="margin-top: 20px; color: #e0e0e0;">© 2025 Adobix Tech. All rights reserved.</p>
     </footer>
 `;
 
