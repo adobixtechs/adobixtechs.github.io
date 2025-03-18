@@ -5,91 +5,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - Expenses Flow</title>
     <link rel="icon" type="image/png" href="assets/icons/logo.png">
-    <link rel="stylesheet" href="css/styles.css">
-    <script defer src="js/script.js"></script>
+    <link rel="stylesheet" href="css/common.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .fa-toggle {
+            transform: rotate(180deg);
+        }
+
+        .fa-toggle {
+            transition: transform 0.3s ease;
+        }
+    </style>
 </head>
 <body>
-
     <div id="header"></div>
 
-    <main class="faq-container">
-        <h1>Frequently Asked Questions</h1>
-        <br>
-        <div class="faq-item">
-            <button class="faq-question">What is Expenses Flow? <span>+</span></button>
-            <div class="faq-answer">
-                <p>Expenses Flow is a smart expense and budget tracking app that helps you manage your finances effortlessly. You can track your income and expenses, set budgets, and analyze spending habits—all while keeping your data private and secure.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">Is there a mobile application available? <span>+</span></button>
-            <div class="faq-answer">
-                <p>Yes! Expenses Flow is available as a mobile app, allowing you to track your finances anytime, anywhere. Manage your expenses, set budgets, and gain insights right from your smartphone.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">How is my financial data stored? <span>+</span></button>
-            <div class="faq-answer">
-                <p>Your financial data is only stored on your device or your linked cloud drive (such as Google Drive or iCloud). We do not store any data on external servers, ensuring complete privacy and security.</p>
-            </div>
-        </div>
+    <div class="main-container">
+        <h1 class="section-heading">Frequently Asked Questions</h1>
         
-        <div class="faq-item">
-            <button class="faq-question">Can I set budgets and track my expenses? <span>+</span></button>
-            <div class="faq-answer">
-                <p>Absolutely! You can create customized budgets for different categories, set spending limits, and track your expenses to stay in control of your finances.</p>
+        <div class="text-content">
+            <div class="faq-item">
+                <div class="faq-question">
+                    What is Expenses Flow?
+                    <i class="fas fa-chevron-down fa-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    Expenses Flow is a smart expense and budget tracking app that helps you manage your finances effortlessly. You can track your income and expenses, set budgets, and analyze spending habits—all while keeping your data private and secure.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Is there a mobile application available? 
+                    <i class="fas fa-chevron-down fa-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! Expenses Flow is available as a mobile app, allowing you to track your finances anytime, anywhere. Manage your expenses, set budgets, and gain insights right from your smartphone.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    How is my financial data stored?
+                    <i class="fas fa-chevron-down fa-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    Your financial data is only stored on your device or your linked cloud drive (such as Google Drive or iCloud). We do not store any data on external servers, ensuring complete privacy and security.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I set budgets and track my expenses?
+                    <i class="fas fa-chevron-down fa-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    Absolutely! You can create customized budgets for different categories, set spending limits, and track your expenses to stay in control of your finances.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Does Expenses Flow require an internet connection?
+                    <i class="fas fa-chevron-down fa-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    No! You can use Expenses Flow offline, and all your data stays on your device. If you choose to back up your data to the cloud, an internet connection will be required for syncing.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Is my data secure? 
+                    <i class="fas fa-chevron-down fa-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! Your data is completely private because it is only stored on your device or your personal cloud drive. We do not have access to your financial information, and there is no third-party tracking.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I see reports and insights on my spending?
+                    <i class="fas fa-chevron-down fa-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! Expenses Flow provides detailed reports, charts, and insights to help you understand your spending habits, track trends, and make informed financial decisions.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Is Expenses Flow free to use?
+                    <i class="fas fa-chevron-down fa-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    Expenses Flow offers both free and premium features. The free version provides essential expense tracking, while premium features may include advanced budgeting, custom reports, and more.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I back up my data?
+                    <i class="fas fa-chevron-down fa-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    You can back up your data by linking your Google Drive or iCloud account. This ensures your financial information is safely stored and can be restored when needed.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I get started with Expenses Flow?
+                    <i class="fas fa-chevron-down fa-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    Simply download the app, set up your categories, and start tracking your expenses. It’s that easy! Got more questions? Reach out to us anytime!
+                </div>
             </div>
         </div>
-
-        <div class="faq-item">
-            <button class="faq-question">Does Expenses Flow require an internet connection? <span>+</span></button>
-            <div class="faq-answer">
-                <p>No! You can use Expenses Flow offline, and all your data stays on your device. If you choose to back up your data to the cloud, an internet connection will be required for syncing.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">Is my data secure? <span>+</span></button>
-            <div class="faq-answer">
-                <p>Yes! Your data is completely private because it is only stored on your device or your personal cloud drive. We do not have access to your financial information, and there is no third-party tracking.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">Can I see reports and insights on my spending? <span>+</span></button>
-            <div class="faq-answer">
-                <p>Yes! Expenses Flow provides detailed reports, charts, and insights to help you understand your spending habits, track trends, and make informed financial decisions.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">Is Expenses Flow free to use? <span>+</span></button>
-            <div class="faq-answer">
-                <p>Expenses Flow offers both free and premium features. The free version provides essential expense tracking, while premium features may include advanced budgeting, custom reports, and more.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">How do I back up my data? <span>+</span></button>
-            <div class="faq-answer">
-                <p>You can back up your data by linking your Google Drive or iCloud account. This ensures your financial information is safely stored and can be restored when needed.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">How do I get started with Expenses Flow? <span>+</span></button>
-            <div class="faq-answer">
-                <p>Simply download the app, set up your categories, and start tracking your expenses. It’s that easy! Got more questions? Reach out to us anytime!</p>
-            </div>
-        </div>
-
-    </main>
+    </div>
 
     <div id="footer"></div>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
