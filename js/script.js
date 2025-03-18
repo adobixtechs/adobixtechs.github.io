@@ -139,3 +139,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Clear data when clicking logo, home button, or navigation links
+document.addEventListener('DOMContentLoaded', function() {
+    const homeLink = document.querySelector('a[href="index.html"]');
+    const logoLink = document.querySelector('.logo');
+    const privacyLink = document.querySelector('a[href="privacy-policy.html"]');
+    const termsLink = document.querySelector('a[href="terms.html"]');
+    const faqLink = document.querySelector('a[href="faq.html"]');
+    
+    function clearAllData() {
+        // Clear any stored data
+        localStorage.clear();
+        sessionStorage.clear();
+        
+        // Clear any form data if exists
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => form.reset());
+        
+        // Clear any input fields
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.value = '';
+        });
+    }
+
+    // Add click event listeners to all navigation links
+    [homeLink, logoLink, privacyLink, termsLink, faqLink].forEach(link => {
+        if (link) {
+            link.addEventListener('click', clearAllData);
+        }
+    });
+});
