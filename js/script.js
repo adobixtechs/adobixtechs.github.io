@@ -14,7 +14,6 @@ document.getElementById('header').innerHTML = `
     </header>
 `;
 
-
 // Load Footer
 document.getElementById('footer').innerHTML = `
     <footer>
@@ -30,24 +29,113 @@ document.getElementById('footer').innerHTML = `
     </footer>
 `;
 
+// Header and Footer Implementation
+document.addEventListener('DOMContentLoaded', function() {
+    // Add overlay div
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    document.body.appendChild(overlay);
+
+    // Menu button functionality
+    const menuBtn = document.querySelector('.menu-btn');
+    const headerLinks = document.querySelector('.header-links');
+    const overlayEl = document.querySelector('.overlay');
+
+    if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+            headerLinks.classList.toggle('active');
+            overlayEl.classList.toggle('active');
+            document.body.style.overflow = headerLinks.classList.contains('active') ? 'hidden' : '';
+        });
+    }
+
+    // Close menu when clicking overlay
+    if (overlayEl) {
+        overlayEl.addEventListener('click', function() {
+            headerLinks.classList.remove('active');
+            overlayEl.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Close menu when clicking a link
+    const menuLinks = document.querySelectorAll('.header-links a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            headerLinks.classList.remove('active');
+            overlayEl.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Set active link based on current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const allLinks = document.querySelectorAll('.header-links a, .footer-links a');
+    allLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+});
+
 // FAQ Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
+    const faqItems = document.querySelectorAll('.faq-item');
     
-    faqQuestions.forEach(question => {
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
         question.addEventListener('click', () => {
-            const faqItem = question.parentElement;
-            const isActive = faqItem.classList.contains('active');
-            
-            // Close all other items
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
+            // Close all other answers
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    if (otherAnswer) {
+                        otherAnswer.style.maxHeight = null;
+                    }
+                }
             });
             
-            // Toggle current item
-            if (!isActive) {
-                faqItem.classList.add('active');
+            // Toggle current answer
+            item.classList.toggle('active');
+            if (answer) {
+                answer.style.maxHeight = item.classList.contains('active') ? answer.scrollHeight + "px" : null;
             }
+        });
+    });
+});
+
+// Mobile Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('.menu-btn');
+    const headerLinks = document.querySelector('.header-links');
+    const overlay = document.querySelector('.overlay');
+
+    if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+            headerLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = headerLinks.classList.contains('active') ? 'hidden' : '';
+        });
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            headerLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Close menu when clicking a link
+    const links = document.querySelectorAll('.header-links a');
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            headerLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
 });
