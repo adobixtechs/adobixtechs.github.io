@@ -2,11 +2,26 @@
 document.getElementById('header').innerHTML = `
     <header>
         <a href="index.html" class="logo">
-            <img src="${window.location.pathname.includes('internet-blocker') ? 'assets/icons/internet_logo.png' : 'assets/icons/logo.png'}" 
-                 alt="${window.location.pathname.includes('internet-blocker') ? 'Internet Blocker' : 'Expenses Flow'} Logo">
-            ${window.location.pathname.includes('internet-blocker') ? 'Internet Blocker' : 'Expenses Flow'}
+            <img src="${
+                window.location.pathname.includes('internet-blocker') ? 'assets/icons/internet_logo.png' : 
+                window.location.pathname.includes('app-blocker') ? 'assets/icons/app_blocker.png' : 
+                'assets/icons/logo.png'
+            }" 
+                 alt="${
+                    window.location.pathname.includes('internet-blocker') ? 'Internet Blocker' : 
+                    window.location.pathname.includes('app-blocker') ? 'App Blocker' : 
+                    'Expenses Flow'
+                 } Logo"
+                 style="${
+                    window.location.pathname.includes('app-blocker') ? 'border-radius: 50%;' : ''
+                 }">
+            ${
+                window.location.pathname.includes('internet-blocker') ? 'Internet Blocker' : 
+                window.location.pathname.includes('app-blocker') ? 'App Blocker' : 
+                'Expenses Flow'
+            }
         </a>
-        ${window.location.pathname.includes('internet-blocker') ? '' : `
+        ${window.location.pathname.includes('internet-blocker') || window.location.pathname.includes('app-blocker') ? '' : `
         <div class="menu-btn">
             <i class="fas fa-bars"></i>
         </div>
@@ -19,7 +34,6 @@ document.getElementById('header').innerHTML = `
         `}
     </header>
 `;
-
 // Load Footer
 document.getElementById('footer').innerHTML = `
     <footer>
