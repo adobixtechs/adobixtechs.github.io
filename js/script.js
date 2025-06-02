@@ -9,7 +9,7 @@ document.getElementById('header').innerHTML = `
             }" 
                  alt="${
                     window.location.pathname.includes('internet-blocker') ? 'Internet Blocker' : 
-                    window.location.pathname.includes('app-blocker') ? 'App Blocker' : 
+                    window.location.pathname.includes('app-blocker') ? 'Limitly App-Block' : 
                     'Expenses Flow'
                  } Logo"
                  style="${
