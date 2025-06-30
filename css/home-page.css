@@ -206,8 +206,10 @@ header:hover {
 
 .content #privacy-policy > p,
 .content #terms-conditions > p {
-    margin-left: 24px;
-    margin-right: 24px;
+    font-size: 1.18rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: #ffd580;
 }
 
 .google-play-btn {
@@ -567,6 +569,13 @@ footer {
 }
 
 .privacy-content > p:first-child {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 28px;
+    color: #fff;
+}
+
+.terms-content > p:first-child {
     font-size: 1.25rem;
     font-weight: 500;
     margin-bottom: 28px;
