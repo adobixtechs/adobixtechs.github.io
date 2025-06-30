@@ -5,24 +5,43 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: #fff;
+html, body {
+    scroll-behavior: auto !important;
+    background: #0a1626 !important;
+    background-color: #0a1626 !important;
+    color: #e6e6e6 !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 20px;
     min-height: 100vh;
+    font-size: 0.8rem;
+    overflow-x: hidden;
+}
+
+/* Prevent white flashes on scrollbars and overscroll */
+html, body, #root, #app, main {
+    background: #0a1626 !important;
+    background-color: #0a1626 !important;
+}
+
+::-webkit-scrollbar {
+    background: #0a1626 !important;
+}
+::-webkit-scrollbar-track {
+    background: #0a1626 !important;
 }
 
 /* Header Styles */
 header {
-    width: 100%;
-    max-width: 1200px;
+    width: calc(100vw - 48px);
+    max-width: 100%;
+    margin: 0 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
     padding: 20px 40px;
     position: fixed;
     top: 0;
@@ -43,7 +62,7 @@ header:hover {
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #fff;
     text-decoration: none;
@@ -66,7 +85,7 @@ header:hover {
 }
 
 .header-links {
-    font-size: 1.1rem;
+    font-size: 0.88rem;
     display: flex;
     gap: 20px;
 }
@@ -117,39 +136,78 @@ header:hover {
 /* Main Content */
 .container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    margin-top: 100px;
+    width: calc(100vw - 48px);
+    max-width: 100%;
+    margin: 100px 24px 0 24px;
     text-align: left;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    background: linear-gradient(135deg, rgba(20, 28, 48, 0.98) 60%, rgba(30, 38, 58, 0.92) 100%) !important;
+    border-radius: 28px !important;
+    box-shadow: 0 8px 32px rgba(10, 22, 38, 0.28) !important;
+    border: 1.5px solid rgba(248, 161, 0, 0.12) !important;
+    padding: 48px 0px;
+    gap: 48px;
 }
 
 .content {
     flex: 1;
-    padding-right: 30px;
+    padding: 0 32px;
+    font-size: 1.18rem;
+    color: #e6e6e6 !important;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 32px;
 }
 
 .content h1 {
     font-size: 3rem;
-    margin-bottom: 20px;
+    font-weight: 900;
+    margin-bottom: 32px;
+    margin-left: 0;
+    margin-right: 0;
     background: linear-gradient(45deg, #f8b400, #ff6b6b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 700;
+}
+
+.content > * {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.content > p:first-of-type {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-bottom: 28px;
+    color: #fff;
+}
+
+.content > p:nth-of-type(2) {
+    font-size: 1.18rem;
+    font-weight: 500;
+    margin-bottom: 28px;
+    color: #ffd580;
 }
 
 .content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-bottom: 22px;
     color: #e0e0e0;
+}
+
+.content #privacy-policy > p,
+.content #terms-conditions > p {
+    margin-left: 24px;
+    margin-right: 24px;
 }
 
 .google-play-btn {
@@ -172,14 +230,19 @@ header:hover {
 
 /* Features Section */
 .features {
+    background: rgba(20, 28, 48, 0.97);
+    border-radius: 24px;
+    box-shadow: 0 6px 32px rgba(10, 22, 38, 0.13);
+    border: 1.5px solid rgba(248, 161, 0, 0.10);
+    margin: 48px 24px;
+    padding: 48px 32px;
     width: 80%;
     max-width: 1200px;
-    margin-top: 50px;
     text-align: center;
 }
 
 .features h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 20px;
 }
 
@@ -217,27 +280,32 @@ header:hover {
 }
 
 .feature-box h3 {
-    font-size: 1.4rem;
+    font-size: 1.12rem;
     margin-bottom: 10px;
     color: #fff;
 }
 
 .feature-box p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #e0e0e0;
     line-height: 1.6;
 }
 
 /* How It Works Section */
 .how-it-works {
+    background: rgba(20, 28, 48, 0.97);
+    border-radius: 24px;
+    box-shadow: 0 6px 32px rgba(10, 22, 38, 0.13);
+    border: 1.5px solid rgba(248, 161, 0, 0.10);
+    margin: 48px 24px;
+    padding: 48px 32px;
     width: 90%;
     max-width: 1200px;
-    margin: 80px auto;
     text-align: center;
 }
 
 .how-it-works h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 40px;
     background: linear-gradient(45deg, #f8b400, #ff6b6b);
     -webkit-background-clip: text;
@@ -281,11 +349,11 @@ header:hover {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 0.96rem;
 }
 
 .step i {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 20px 0;
     background: linear-gradient(45deg, #f8b400, #ff6b6b);
     -webkit-background-clip: text;
@@ -293,7 +361,7 @@ header:hover {
 }
 
 .step h3 {
-    font-size: 1.4rem;
+    font-size: 1.12rem;
     margin-bottom: 15px;
     color: #fff;
 }
@@ -305,19 +373,19 @@ header:hover {
 
 /* Benefits Section */
 .benefits {
+    background: rgba(20, 28, 48, 0.97);
+    border-radius: 24px;
+    box-shadow: 0 6px 32px rgba(10, 22, 38, 0.13);
+    border: 1.5px solid rgba(248, 161, 0, 0.10);
+    margin: 48px 24px;
+    padding: 48px 32px;
     width: 90%;
     max-width: 1200px;
-    margin: 80px auto;
     text-align: center;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .benefits h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 40px;
     background: linear-gradient(45deg, #f8b400, #ff6b6b);
     -webkit-background-clip: text;
@@ -362,15 +430,15 @@ header:hover {
 
 /* Download Section */
 .download-section {
-    width: 90%;
-    max-width: 1200px;
-    margin: 80px auto;
-    text-align: center;
     background: linear-gradient(135deg, rgba(248, 180, 0, 0.1), rgba(255, 107, 107, 0.1));
     padding: 60px 40px;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+    text-align: center;
 }
 
 .download-content h2 {
@@ -423,59 +491,86 @@ footer {
 }
 
 /* Privacy Policy Styles */
-.privacy-content {
-    text-align: left;
-    line-height: 1.6;
-    color: #e0e0e0;
+.privacy-content, .terms-content {
+    background: rgba(18, 24, 38, 0.92);
+    border-radius: 22px;
+    padding: 32px 18px 32px 18px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 32px rgba(10, 22, 38, 0.13);
+    border: 1.5px solid rgba(248, 161, 0, 0.13);
+    transition: box-shadow 0.3s;
+}
+.privacy-content:hover, .terms-content:hover {
+    box-shadow: 0 12px 40px rgba(248, 161, 0, 0.18);
 }
 
-.privacy-section {
-    margin-bottom: 30px;
+.privacy-section, .terms-section {
+    background: rgba(30, 38, 58, 0.82);
+    border-radius: 16px;
+    padding: 20px 14px 20px 22px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(10, 22, 38, 0.10);
+    border-left: 5px solid #f8a100;
+    transition: border-color 0.3s;
+}
+.privacy-section:hover, .terms-section:hover {
+    border-left: 5px solid #ff6b6b;
 }
 
-.privacy-section h2 {
-    color: #f8a100;
+.privacy-section h2, .terms-section h2 {
+    color: #f8a100 !important;
+    background: linear-gradient(90deg, #f8a100 40%, #ff6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.1rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.privacy-section h3, .terms-section h3 {
+    color: #ffd580 !important;
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.privacy-section p, .terms-section p, .privacy-section ul, .terms-section ul, .privacy-section li, .terms-section li {
+    color: #e6e6e6 !important;
+    font-size: 1.12rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.privacy-section ul, .terms-section ul {
+    padding-left: 18px;
+}
+
+.privacy-section ul li, .terms-section ul li {
+    padding-left: 18px;
     margin-bottom: 10px;
-    font-size: 1.5rem;
 }
 
-.privacy-section h3 {
-    color: #97761d;
-    margin-bottom: 15px;
+.privacy-section ul li:before, .terms-section ul li:before {
+    color: #f8a100 !important;
     font-size: 1.2rem;
 }
 
-.privacy-section p {
-    margin-bottom: 15px;
+.privacy-section a, .terms-section a {
+    color: #f8a100 !important;
+    text-decoration: underline;
+    font-weight: 600;
 }
 
-.privacy-section ul {
-    list-style-type: none;
-    padding-left: 20px;
+.privacy-section a:hover, .terms-section a:hover {
+    color: #ff6b6b !important;
 }
 
-.privacy-section ul li {
-    position: relative;
-    margin-bottom: 10px;
-    padding-left: 25px;
-}
-
-.privacy-section ul li:before {
-    content: "•";
-    color: #f8b400;
-    position: absolute;
-    left: 0;
-    font-size: 1.2rem;
-}
-
-.privacy-section a {
-    color: #f8b400;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.privacy-section a:hover {
-    color: #ff6b6b;
+.privacy-content > p:first-child {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 28px;
+    color: #fff;
 }
 
 /* FAQ Styles */
@@ -653,148 +748,36 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-        text-align: left;
-    }
-
+@media (max-width: 900px) {
     .container {
         flex-direction: column;
-        padding: 20px;
-        margin-top: 80px;
-        width: 95%;
+        gap: 24px;
+        padding: 32px 0px;
     }
-
-    .content {
-        padding-right: 0;
-        margin-bottom: 30px;
+    .content, .image-container {
+        padding: 0 12px;
     }
-
+    .features, .how-it-works, .benefits, .download-section {
+        margin: 32px 8px;
+        padding: 32px 12px;
+    }
     .content h1 {
-        font-size: 2.2rem;
-        text-align: left;
-    }
-
-    .content p {
-        font-size: 1rem;
-        text-align: left;
-        margin: 0 0 20px 0;
-    }
-
-    .image-container img {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .features-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .feature-box {
-        width: 100%;
-        max-width: 350px;
-        margin-bottom: 20px;
-        text-align: left;
-    }
-
-    .steps-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .step {
-        width: 100%;
-        max-width: 350px;
-        margin-bottom: 30px;
-        text-align: left;
-    }
-
-    .benefits-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .benefit-item {
-        max-width: 350px;
-        margin: 0;
-        text-align: left;
-    }
-
-    .download-section {
-        padding: 30px 20px;
-        text-align: left;
-    }
-
-    .download-content h2 {
         font-size: 2rem;
-        text-align: left;
-    }
-
-    .download-content p {
-        font-size: 1rem;
-        text-align: left;
-    }
-
-    .google-play-btn img {
-        width: 120px;
-    }
-
-    .privacy-section h2 {
-        font-size: 1.3rem;
-        text-align: left;
-    }
-    
-    .privacy-section ul li {
-        font-size: 0.95rem;
-        text-align: left;
     }
 }
-
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    .container {
+        margin: 60px 4px 0 4px;
+        padding: 16px 0px;
+        border-radius: 14px !important;
+    }
+    .features, .how-it-works, .benefits, .download-section {
+        margin: 18px 2px;
+        padding: 16px 2px;
+        border-radius: 12px;
+    }
     .content h1 {
-        font-size: 1.8rem;
-        text-align: left;
-    }
-
-    .content p {
-        font-size: 0.9rem;
-        text-align: left;
-    }
-
-    .feature-box, .step, .benefit-item {
-        padding: 20px;
-        text-align: left;
-    }
-
-    .feature-box h3, .step h3, .benefit-item h3 {
-        font-size: 1.2rem;
-        text-align: left;
-    }
-
-    .feature-box p, .step p, .benefit-item p {
-        font-size: 0.9rem;
-        text-align: left;
-    }
-
-    .download-section {
-        padding: 20px 15px;
-        text-align: left;
-    }
-
-    .download-content h2 {
-        font-size: 1.6rem;
-        text-align: left;
-    }
-
-    .download-content p {
-        text-align: left;
-    }
-
-    .google-play-btn img {
-        width: 100px;
+        font-size: 1.3rem;
     }
 }
 
