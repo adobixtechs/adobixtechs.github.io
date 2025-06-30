@@ -16,7 +16,6 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
-    font-size: 0.8rem;
 }
 
 body::before {
@@ -58,7 +57,7 @@ header:hover {
 }
 
 .logo {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #fff;
     text-decoration: none;
@@ -81,7 +80,7 @@ header:hover {
 }
 
 .header-links {
-    font-size: 0.88rem;
+    font-size: 1.1rem;
     display: flex;
     gap: 20px;
 }
@@ -163,7 +162,7 @@ header:hover {
 
 /* Section Headings */
 .section-heading {
-    font-size: 2.4rem;
+    font-size: 3rem;
     margin-bottom: 50px;
     background: linear-gradient(45deg, #f8b400, #ff6b6b);
     -webkit-background-clip: text;
@@ -570,3 +569,4 @@ footer {
         font-size: 1.1rem;
     }
 } 
+
