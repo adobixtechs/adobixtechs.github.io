@@ -1,4 +1,5 @@
 // Load Header
+// Load Header
 document.getElementById('header').innerHTML = `
     <header>
         <a href="index.html" class="logo">
@@ -9,7 +10,7 @@ document.getElementById('header').innerHTML = `
             }" 
                  alt="${
                     window.location.pathname.includes('internet-blocker') ? 'Internet Blocker' : 
-                    window.location.pathname.includes('app-blocker') ? 'Limitly App-Block' : 
+                    window.location.pathname.includes('app-blocker') ? 'Limitly : -App-Blocker' : 
                     'Expenses Flow'
                  } Logo"
                  style="${
@@ -17,7 +18,7 @@ document.getElementById('header').innerHTML = `
                  }">
             ${
                 window.location.pathname.includes('internet-blocker') ? 'Internet Blocker' : 
-                window.location.pathname.includes('app-blocker') ? 'Limitly App-Block' : 
+                window.location.pathname.includes('app-blocker') ? 'Limitly : - App-Blocker' : 
                 'Expenses Flow'
             }
         </a>
