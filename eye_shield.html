@@ -151,7 +151,7 @@
             <h3>2.1 Personal Information</h3>
             <p>Eye Shield Pro is designed with privacy in mind. We collect minimal personal information:</p>
             <ul>
-                <li><strong>App Preferences:</strong> Your screen dimming settings, blue light filter preferences, color temperature settings, filter strength, and scheduling preferences are stored locally on your device</li>
+                <li><strong>App Preferences:</strong> Your screen dimming settings, blue light filter preferences, color temperature settings, filter strength, and theme preferences are stored locally on your device</li>
                 <li><strong>Device Information:</strong> Basic device information necessary for app functionality (Android version, screen resolution)</li>
                 <li><strong>Usage Data:</strong> Anonymous usage statistics to improve app performance and user experience</li>
                 <li><strong>Theme Preferences:</strong> Your app theme settings (light/dark mode)</li>
@@ -169,6 +169,7 @@
                     <li>Financial information</li>
                     <li>Screen content or screenshots</li>
                     <li>App usage patterns outside of our app</li>
+                    <li>Scheduling or timing information</li>
                 </ul>
             </div>
         </div>
@@ -178,7 +179,7 @@
             <p>We use the collected information for the following purposes:</p>
             <ul>
                 <li><strong>App Functionality:</strong> To provide screen dimming and blue light filtering features</li>
-                <li><strong>Personalization:</strong> To remember your preferences, filter presets, and scheduling settings</li>
+                <li><strong>Personalization:</strong> To remember your preferences, filter presets, and theme settings</li>
                 <li><strong>Performance:</strong> To optimize app performance and fix technical issues</li>
                 <li><strong>Improvements:</strong> To enhance user experience and add new features</li>
                 <li><strong>Notifications:</strong> To provide essential app notifications and service status updates</li>
@@ -195,9 +196,9 @@
                 <li>Screen dimming brightness levels</li>
                 <li>Blue light filter settings and presets</li>
                 <li>Color temperature preferences</li>
-                <li>Scheduling settings and times</li>
                 <li>Theme preferences</li>
                 <li>Filter strength and type settings</li>
+                <li>Advanced filter options (sepia, grayscale, etc.)</li>
             </ul>
             <p>This data never leaves your device and is not transmitted to our servers.</p>
             
@@ -219,15 +220,12 @@
             <ul>
                 <li><strong>SYSTEM_ALERT_WINDOW:</strong> Required to display the screen overlay for dimming and blue light filtering</li>
                 <li><strong>FOREGROUND_SERVICE:</strong> Required to run the overlay service in the background</li>
+                <li><strong>FOREGROUND_SERVICE_SPECIAL_USE:</strong> Required for special use foreground services</li>
                 <li><strong>POST_NOTIFICATIONS:</strong> Required to show service status notifications (Android 13+)</li>
             </ul>
             
-            <h3>5.2 Optional Permissions</h3>
-            <ul>
-                <li><strong>SCHEDULE_EXACT_ALARM:</strong> For auto-scheduling features (optional)</li>
-                <li><strong>USE_EXACT_ALARM:</strong> For precise alarm scheduling (optional)</li>
-                <li><strong>RECEIVE_BOOT_COMPLETED:</strong> To restore scheduled settings after device restart (optional)</li>
-            </ul>
+            <h3>5.2 Permission Usage</h3>
+            <p>All permissions are used solely for the core functionality of the app - providing screen dimming and blue light filtering. We do not use any permissions for tracking, advertising, or data collection purposes.</p>
         </div>
 
         <div class="section">
@@ -295,7 +293,21 @@
         </div>
 
         <div class="section">
-            <h2>13. Disclaimer</h2>
+            <h2>13. App Features</h2>
+            <p>Eye Shield Pro provides the following features:</p>
+            <ul>
+                <li><strong>Screen Dimming:</strong> Manual control over screen brightness and dimming</li>
+                <li><strong>Blue Light Filter:</strong> Advanced blue light filtering with customizable presets</li>
+                <li><strong>Color Temperature:</strong> Adjustable color temperature settings</li>
+                <li><strong>Advanced Filters:</strong> Sepia, grayscale, and other visual effects</li>
+                <li><strong>Theme Support:</strong> Light and dark theme options</li>
+                <li><strong>Manual Control:</strong> All features are manually controlled by the user</li>
+            </ul>
+            <p><strong>Note:</strong> This app does not include any automatic scheduling or timing features. All functionality is manually controlled by the user.</p>
+        </div>
+
+        <div class="section">
+            <h2>14. Disclaimer</h2>
             <p>While we strive to protect your privacy, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security of your information.</p>
         </div>
 
