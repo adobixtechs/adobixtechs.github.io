@@ -1,0 +1,180 @@
+/* App Blocker Specific Styles */
+html, body {
+    background: #0a1a2f !important;
+    background-color: #0a1a2f !important;
+    color: #e6e6e6 !important;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+}
+
+#root, #app, main {
+    background: #0a1a2f !important;
+    background-color: #0a1a2f !important;
+}
+
+::-webkit-scrollbar {
+    background: #0a1a2f !important;
+}
+::-webkit-scrollbar-track {
+    background: #0a1a2f !important;
+}
+
+.container {
+    background: linear-gradient(135deg, rgba(20, 28, 48, 0.98) 60%, rgba(30, 38, 58, 0.92) 100%) !important;
+    border-radius: 32px !important;
+    box-shadow: 0 8px 32px rgba(10, 22, 38, 0.28) !important;
+    border: 2px solid rgba(248, 161, 0, 0.15) !important;
+    padding: 56px 0px;
+    width: calc(100vw - 48px);
+    max-width: 100vw;
+    margin: 100px 24px 0 24px;
+    box-sizing: border-box;
+}
+
+.content > * {
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+.content h1 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    margin-bottom: 28px;
+    background: linear-gradient(45deg, #f8b400, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Effective Date */
+.content #privacy-policy > p,
+.content #terms-conditions > p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 28px;
+    color: #ffd580;
+}
+
+/* Intro Paragraphs */
+.privacy-content > p:first-child,
+.terms-content > p:first-child {
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #fff;
+}
+
+.privacy-content, .terms-content {
+    background: rgba(18, 24, 38, 0.95);
+    border-radius: 24px;
+    padding: 40px 24px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 32px rgba(10, 22, 38, 0.13);
+    border: 2px solid rgba(248, 161, 0, 0.13);
+    transition: box-shadow 0.3s;
+}
+.privacy-content:hover, .terms-content:hover {
+    box-shadow: 0 12px 40px rgba(248, 161, 0, 0.18);
+}
+
+.privacy-section, .terms-section {
+    background: rgba(30, 38, 58, 0.88);
+    border-radius: 18px;
+    padding: 24px 18px 24px 28px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(10, 22, 38, 0.10);
+    border-left: 6px solid #f8a100;
+    transition: border-color 0.3s;
+}
+.privacy-section:hover, .terms-section:hover {
+    border-left: 6px solid #ff6b6b;
+}
+
+.privacy-section h2, .terms-section h2 {
+    color: #f8a100 !important;
+    background: linear-gradient(90deg, #f8a100 40%, #ff6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.privacy-section h3, .terms-section h3 {
+    color: #ffd580 !important;
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.privacy-section p, .terms-section p, .privacy-section ul, .terms-section ul, .privacy-section li, .terms-section li {
+    color: #e6e6e6 !important;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.privacy-section ul, .terms-section ul {
+    padding-left: 18px;
+}
+
+.privacy-section ul li, .terms-section ul li {
+    padding-left: 18px;
+    margin-bottom: 10px;
+}
+
+.privacy-section ul li:before, .terms-section ul li:before {
+    color: #f8a100 !important;
+    font-size: 1.2rem;
+}
+
+.privacy-section a, .terms-section a {
+    color: #f8a100 !important;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.privacy-section a:hover, .terms-section a:hover {
+    color: #ff6b6b !important;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        gap: 24px;
+        padding: 32px 0px;
+    }
+    .content > * {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+    .privacy-content, .terms-content {
+        padding: 24px 8px;
+    }
+    .privacy-section, .terms-section {
+        padding: 16px 8px 16px 16px;
+    }
+    .content h1 {
+        font-size: 2rem;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        margin: 60px 4px 0 4px;
+        padding: 12px 0px;
+        border-radius: 14px !important;
+    }
+    .privacy-content, .terms-content {
+        margin-bottom: 18px;
+        padding: 12px 2px;
+        border-radius: 12px;
+    }
+    .privacy-section, .terms-section {
+        margin-bottom: 14px;
+        padding: 8px 2px 8px 8px;
+        border-radius: 10px;
+    }
+    .content h1 {
+        font-size: 1.2rem;
+    }
+} 
