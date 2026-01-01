@@ -10,13 +10,20 @@
   "use strict";
 
   /**
-   * Apply .scrolled class to the body as the page is scrolled down
+   * Apply .scrolled class to the body and header as the page is scrolled down
    */
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+    if (!selectHeader) return;
+    
+    if (window.scrollY > 50) {
+      selectBody.classList.add('scrolled');
+      selectHeader.classList.add('scrolled');
+    } else {
+      selectBody.classList.remove('scrolled');
+      selectHeader.classList.remove('scrolled');
+    }
   }
 
   document.addEventListener('scroll', toggleScrolled);
@@ -211,5 +218,310 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  /**
+   * Animated Counter for Statistics
+   */
+  function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000; // 2 seconds
+    const increment = target / (duration / 16); // 60fps
+    let current = 0;
+
+    const updateCounter = () => {
+      current += increment;
+      if (current < target) {
+        element.textContent = Math.floor(current);
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target;
+      }
+    };
+
+    updateCounter();
+  }
+
+  function initCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+          entry.target.classList.add('counted');
+          animateCounter(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  }
+
+  window.addEventListener('load', initCounters);
+
+  /**
+   * Technology Modal Functionality
+   */
+  const techData = {
+    react: {
+      icon: '<i class="bi bi-code-square"></i>',
+      title: 'React',
+      description: 'A powerful JavaScript library for building user interfaces. We use React to create dynamic, responsive, and scalable web applications with component-based architecture.',
+      useCase: 'Building interactive user interfaces and single-page applications',
+      expertise: 'Expert level - Advanced state management and hooks'
+    },
+    javascript: {
+      icon: '<i class="bi bi-filetype-js"></i>',
+      title: 'JavaScript',
+      description: 'The core programming language of the web. We leverage modern JavaScript (ES6+) to build robust, performant applications with advanced features and best practices.',
+      useCase: 'Frontend and backend development, full-stack solutions',
+      expertise: 'Expert level - ES6+, async/await, modern patterns'
+    },
+    typescript: {
+      icon: '<i class="bi bi-filetype-tsx"></i>',
+      title: 'TypeScript',
+      description: 'Type-safe JavaScript that scales. We use TypeScript to build more maintainable and error-free applications with enhanced developer experience and better code quality.',
+      useCase: 'Large-scale applications requiring type safety',
+      expertise: 'Advanced level - Complex types and generics'
+    },
+    html5: {
+      icon: '<i class="bi bi-filetype-html"></i>',
+      title: 'HTML5',
+      description: 'The latest standard for structuring web content. We create semantic, accessible, and SEO-friendly HTML5 markup that works across all modern browsers and devices.',
+      useCase: 'Semantic markup, multimedia content, web applications',
+      expertise: 'Expert level - Accessibility and SEO optimization'
+    },
+    css3: {
+      icon: '<i class="bi bi-filetype-css"></i>',
+      title: 'CSS3',
+      description: 'Advanced styling and layout capabilities. We use CSS3 features including Flexbox, Grid, animations, and custom properties to create stunning, responsive designs.',
+      useCase: 'Responsive layouts, animations, modern UI design',
+      expertise: 'Expert level - Advanced layouts and animations'
+    },
+    bootstrap: {
+      icon: '<i class="bi bi-bootstrap"></i>',
+      title: 'Bootstrap',
+      description: 'The world\'s most popular front-end framework. We utilize Bootstrap to rapidly build responsive, mobile-first websites with a consistent design system.',
+      useCase: 'Rapid prototyping and responsive web development',
+      expertise: 'Expert level - Customization and theming'
+    },
+    nodejs: {
+      icon: '<i class="bi bi-filetype-node"></i>',
+      title: 'Node.js',
+      description: 'JavaScript runtime for server-side development. We build scalable backend services, APIs, and real-time applications using Node.js and its extensive ecosystem.',
+      useCase: 'Backend APIs, real-time applications, microservices',
+      expertise: 'Advanced level - Express, RESTful APIs, WebSockets'
+    },
+    mongodb: {
+      icon: '<i class="bi bi-database"></i>',
+      title: 'MongoDB',
+      description: 'A flexible NoSQL database for modern applications. We design and implement MongoDB solutions for scalable data storage with efficient querying and indexing.',
+      useCase: 'Document-based data storage, scalable applications',
+      expertise: 'Advanced level - Schema design and optimization'
+    },
+    mysql: {
+      icon: '<i class="bi bi-database-fill"></i>',
+      title: 'MySQL',
+      description: 'Reliable relational database management system. We create optimized MySQL databases with proper indexing, relationships, and query optimization for high-performance applications.',
+      useCase: 'Structured data storage, transactional systems',
+      expertise: 'Advanced level - Query optimization and indexing'
+    },
+    android: {
+      icon: '<i class="bi bi-android2"></i>',
+      title: 'Android',
+      description: 'Native Android app development using Kotlin and Java. We build high-performance mobile applications with modern Android architecture patterns and Material Design.',
+      useCase: 'Native mobile applications for Android devices',
+      expertise: 'Advanced level - Kotlin, Jetpack, Material Design'
+    },
+    ios: {
+      icon: '<i class="bi bi-apple"></i>',
+      title: 'iOS',
+      description: 'Native iOS app development using Swift and SwiftUI. We create beautiful, intuitive iOS applications that follow Apple\'s Human Interface Guidelines.',
+      useCase: 'Native mobile applications for iPhone and iPad',
+      expertise: 'Advanced level - Swift, SwiftUI, Core Data'
+    },
+    git: {
+      icon: '<i class="bi bi-git"></i>',
+      title: 'Git',
+      description: 'Version control system for tracking code changes. We use Git for collaborative development, branching strategies, and maintaining clean code repositories.',
+      useCase: 'Version control, collaborative development, CI/CD',
+      expertise: 'Expert level - Advanced workflows and branching'
+    },
+    aws: {
+      icon: '<i class="bi bi-cloud"></i>',
+      title: 'AWS',
+      description: 'Amazon Web Services cloud platform. We deploy and manage scalable cloud infrastructure using AWS services including EC2, S3, Lambda, and more.',
+      useCase: 'Cloud infrastructure, scalable deployments, serverless',
+      expertise: 'Advanced level - Multiple AWS services integration'
+    },
+    firebase: {
+      icon: '<i class="bi bi-fire"></i>',
+      title: 'Firebase',
+      description: 'Google\'s platform for building mobile and web applications. We leverage Firebase for authentication, real-time databases, cloud storage, and hosting.',
+      useCase: 'Real-time apps, authentication, cloud storage',
+      expertise: 'Advanced level - Full Firebase suite integration'
+    },
+    php: {
+      icon: '<i class="bi bi-filetype-php"></i>',
+      title: 'PHP',
+      description: 'Server-side scripting language for web development. We build dynamic websites and web applications using modern PHP frameworks and best practices.',
+      useCase: 'Server-side scripting, content management systems',
+      expertise: 'Advanced level - Laravel, WordPress development'
+    },
+    python: {
+      icon: '<i class="bi bi-filetype-py"></i>',
+      title: 'Python',
+      description: 'Versatile programming language for various applications. We use Python for backend development, data processing, automation, and machine learning projects.',
+      useCase: 'Backend APIs, data processing, automation scripts',
+      expertise: 'Advanced level - Django, Flask, data science'
+    }
+  };
+
+  /**
+   * Technology Domains Switching
+   */
+  function initTechDomains() {
+    const domainItems = document.querySelectorAll('.domain-item');
+    const techDomainContents = document.querySelectorAll('.tech-domain-content');
+
+    if (domainItems.length === 0) {
+      console.log('No domain items found');
+      return;
+    }
+    
+    if (techDomainContents.length === 0) {
+      console.log('No tech domain contents found');
+      return;
+    }
+
+    function switchDomain(domainName) {
+      // Remove active class from all domain items
+      domainItems.forEach(item => {
+        item.classList.remove('active');
+      });
+
+      // Add active class to clicked domain item
+      const clickedDomain = document.querySelector(`[data-domain="${domainName}"]`);
+      if (clickedDomain) {
+        clickedDomain.classList.add('active');
+      }
+
+      // Hide all tech domain contents
+      techDomainContents.forEach(content => {
+        content.classList.remove('active');
+      });
+
+      // Show selected tech domain content
+      const selectedContent = document.querySelector(`[data-domain-content="${domainName}"]`);
+      if (selectedContent) {
+        selectedContent.classList.add('active');
+      } else {
+        console.log('Content not found for domain:', domainName);
+      }
+    }
+
+    // Add click event listeners to domain items
+    domainItems.forEach((item, index) => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const domainName = this.getAttribute('data-domain');
+        if (domainName) {
+          switchDomain(domainName);
+        }
+      });
+    });
+    
+    // Ensure first domain is active on load
+    if (domainItems.length > 0) {
+      const firstDomain = domainItems[0].getAttribute('data-domain');
+      if (firstDomain) {
+        switchDomain(firstDomain);
+      }
+    }
+  }
+
+  // Initialize on DOM ready and window load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(initTechDomains, 100);
+    });
+  } else {
+    setTimeout(initTechDomains, 100);
+  }
+  
+  // Also try on window load as backup
+  window.addEventListener('load', function() {
+    setTimeout(initTechDomains, 200);
+  });
+
+  const techModal = document.getElementById('techModal');
+  if (techModal) {
+    const techModalOverlay = techModal.querySelector('.tech-modal-overlay');
+    const techModalClose = techModal.querySelector('.tech-modal-close');
+    const techModalIcon = document.getElementById('techModalIcon');
+    const techModalTitle = document.getElementById('techModalTitle');
+    const techModalDescription = document.getElementById('techModalDescription');
+    const techModalUseCase = document.getElementById('techModalUseCase');
+    const techModalExpertise = document.getElementById('techModalExpertise');
+
+    function openTechModal(techKey) {
+      const tech = techData[techKey];
+      if (!tech) return;
+
+      techModalIcon.innerHTML = tech.icon;
+      techModalTitle.textContent = tech.title;
+      techModalDescription.textContent = tech.description;
+      techModalUseCase.textContent = tech.useCase;
+      techModalExpertise.textContent = tech.expertise;
+
+      techModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeTechModal() {
+      techModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Add click event listeners to tech cards
+    document.querySelectorAll('.tech-card').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function() {
+        const techKey = this.getAttribute('data-tech');
+        if (techKey && techData[techKey]) {
+          openTechModal(techKey);
+        }
+      });
+    });
+
+    // Close modal events
+    if (techModalOverlay) {
+      techModalOverlay.addEventListener('click', closeTechModal);
+    }
+    if (techModalClose) {
+      techModalClose.addEventListener('click', closeTechModal);
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && techModal.classList.contains('active')) {
+        closeTechModal();
+      }
+    });
+  }
+
+  /**
+   * Update Copyright Year
+   */
+  const currentYear = new Date().getFullYear();
+  const yearElement = document.getElementById('currentYear');
+  if (yearElement) {
+    yearElement.textContent = currentYear;
+  }
 
 })();

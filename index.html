@@ -1,140 +1,1003 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expenses Flow: Expense & Budget Tracker</title>
-    <link rel="icon" type="image/png" href="assets/icons/logo.png">
-    <link rel="stylesheet" href="css/home-page.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
-    <script>
-        if (window.location.pathname.includes('adobix_index')) {
-            window.location.href = 'adobix_index.html';
-        }
-    </script>
-    <script defer src="js/script.js"></script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Adobix Tech | Software & IT Solutions Company in India</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicon -->
+  <link rel="icon" sizes="32x32" href="adobix_assets/img/logo.ico">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="adobix_assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="adobix_assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="adobix_assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="adobix_assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="adobix_assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="adobix_assets/css/main.css" rel="stylesheet">
 </head>
-<body>
 
-    <div id="header">
-        <a href="index.html" class="logo">
-            <img src="assets/icons/logo.png" alt="Expenses Flow Logo">
-            Expenses Flow
-        </a>
-        <div class="menu-btn">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="header-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms.html">Terms</a>
-            <a href="faq.html">FAQ</a>
-        </div>
-    </div>
+<body class="index-page">
 
-    <div class="container">
-        <div class="content">
-            <h1>Expenses Flow: Expense & Budget Tracker</h1>
-            <p>Take control of your finances with Expenses Flow, the ultimate expense tracking and budgeting app! Whether you're managing daily expenses, setting financial goals, or tracking your net worth, Expenses Flow makes it effortless.</p>
-            <br>
-            <p>Download Expenses Flow today & take charge of your financial future!</p>
-            <br>
-            <a href="https://play.google.com/store/apps/details?id=com.tools.expense_tracker" class="google-play-btn" target="_blank">
-                <img src="assets/icons/image.png" alt="Get it on Google Play">
-            </a>
-        </div>
-        <div class="image-container">
-            <img src="assets/images/app-screenshot.png" alt="App Mockup">
-        </div>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div
+      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="adobix_assets/img/logo.png" alt="">
+        <h1 class="sitename">Adobixtech</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#technologies">Technologies</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a class="btn-getstarted" href="#cta">Get Started</a>
     </div>
+  </header>
+
+  <main class="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 content-col" data-aos="fade-up">
+            <div class="content">
+              <div class="main-heading">
+                <h1>Transform Your Digital Vision Into Reality</h1>
+              </div>
+              <!--<div class="divider"></div>-->
+              <div class="description">
+                <p>We specialize in turning your ideas into reality. Our dedicated team creates stunning apps and
+                  websites that captivate your audience, while strategically boosting your product's visibility on
+                  social media. Whether you’re starting from scratch or need to enhance an existing project, we’re here
+                  to help you succeed.</p>
+              </div>
+              <div class="cta-button">
+                <a href="#services" class="btn">
+                  <span>EXPLORE SERVICES</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5" data-aos="zoom-out">
+            <div class="visual-content">
+              <div class="fluid-shape">
+                <img src="adobix_assets/img/abstract/abstract-1.png" alt="Abstract Fluid Shape" class="fluid-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+
+    <!-- Start Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <div><span>Check Our</span> <span class="description-title">Services</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="bi bi-code-slash"></i>
+                </div>
+                <h3>
+                  <a href="#">Application Development</a>
+                </h3>
+                <p>Transform your ideas into powerful mobile apps with our expert team. We create feature-rich,
+                  user-friendly applications for Android and iOS platforms. From concept to deployment, we handle every
+                  aspect of the development process.</p>
+                <ul class="service-features">
+                  <li><i class="bi bi-check-circle"></i> Native & Cross-Platform Development</li>
+                  <li><i class="bi bi-check-circle"></i> UI/UX Design Integration</li>
+                  <li><i class="bi bi-check-circle"></i> App Store Optimization</li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="bi bi-globe"></i>
+                </div>
+                <h3>
+                  <a href="#">Web Development</a>
+                </h3>
+                <p>Build your perfect online presence with our custom web solutions. We create responsive, fast-loading
+                  websites that drive engagement and conversions. Our modern approach ensures your site stands out in
+                  the digital landscape.</p>
+                <ul class="service-features">
+                  <li><i class="bi bi-check-circle"></i> Responsive Design</li>
+                  <li><i class="bi bi-check-circle"></i> E-Commerce Solutions</li>
+                  <li><i class="bi bi-check-circle"></i> SEO Optimization</li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="bi bi-megaphone"></i>
+                </div>
+                <h3>
+                  <a href="#">Social Media Management</a>
+                </h3>
+                <p>Elevate your brand with our expert social media strategies. We create engaging content, manage your
+                  platforms, and grow your online community. Boost your brand visibility and connect with your audience
+                  like never before.</p>
+                <ul class="service-features">
+                  <li><i class="bi bi-check-circle"></i> Content Creation & Strategy</li>
+                  <li><i class="bi bi-check-circle"></i> Community Management</li>
+                  <li><i class="bi bi-check-circle"></i> Analytics & Reporting</li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- END /Services Section -->
+
+    <!-- Statistics Section -->
+    <section id="stats" class="stats section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-people"></i>
+              </div>
+              <div class="stat-content">
+                <span class="stat-number" data-target="150">0</span>
+                <span class="stat-plus">+</span>
+                <p class="stat-label">Happy Clients</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-folder-check"></i>
+              </div>
+              <div class="stat-content">
+                <span class="stat-number" data-target="200">0</span>
+                <span class="stat-plus">+</span>
+                <p class="stat-label">Projects Completed</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-award"></i>
+              </div>
+              <div class="stat-content">
+                <span class="stat-number" data-target="5">0</span>
+                <span class="stat-plus">+</span>
+                <p class="stat-label">Years Experience</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-star"></i>
+              </div>
+              <div class="stat-content">
+                <span class="stat-number" data-target="98">0</span>
+                <span class="stat-plus">%</span>
+                <p class="stat-label">Client Satisfaction</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Statistics Section -->
 
     <!-- Features Section -->
-    <section class="features">
+    <section id="features" class="features section">
+      <div class="container section-title" data-aos="fade-up">
         <h2>Features</h2>
-        <div class="features-container">
-            <div class="feature-box">
-                <i class="fas fa-chart-line"></i>
-                <h3>Budget Planner</h3>
-                <p>Create personalized monthly or category-specific budgets, get alerts when you're close to overspending, and ensure you stay within your financial limits.</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-money-bill-wave"></i>
-                <h3>Expense Tracking</h3>
-                <p>Easily log your daily expenses and income, categorize transactions, and gain a detailed breakdown of where your money goes. Stay financially aware with real-time expense tracking.</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Secure & Private</h3>
-                <p>Your data is stored only on your device and your linked cloud drive, ensuring complete control and privacy—no third-party servers, no tracking.</p>
-            </div>
-        </div>
-    </section>
+        <div><span>Why Choose</span> <span class="description-title">Us</span></div>
+      </div>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works">
-        <h2>How It Works</h2>
-        <div class="steps-container">
-            <div class="step">
-                <div class="step-number">1</div>
-                <i class="fas fa-download"></i>
-                <h3>Download App</h3>
-                <p>Get started by downloading Expenses Flow from the Google Play Store</p>
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="bi bi-lightning-charge"></i>
+              </div>
+              <h4>Fast Delivery</h4>
+              <p>We deliver high-quality solutions on time, every time. Our agile development process ensures rapid
+                turnaround without compromising quality.</p>
             </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <i class="fas fa-user-plus"></i>
-                <h3>Sign in with Google</h3>
-                <p>Quickly sign in using your Google account—no need to remember passwords!</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <i class="fas fa-wallet"></i>
-                <h3>Start Tracking</h3>
-                <p>Begin logging your expenses and set up your monthly budget</p>
-            </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Benefits Section -->
-    <section class="benefits">
-        <h2>Why Choose Expenses Flow?</h2>
-        <div class="benefits-container">
-            <div class="benefit-item">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>User-Friendly Interface</h3>
-                <p>Simple and intuitive design makes expense tracking effortless</p>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h4>Secure & Reliable</h4>
+              <p>Your data and applications are protected with industry-standard security measures. We prioritize
+                security in every project we undertake.</p>
             </div>
-            <div class="benefit-item">
-                <i class="fas fa-chart-pie"></i>
-                <h3>Smart Analytics</h3>
-                <p>Get detailed insights into your spending patterns with beautiful charts</p>
-            </div>
-            <div class="benefit-item">
-                <i class="fas fa-bell"></i>
-                <h3>Smart Notifications</h3>
-                <p>Stay on top of your budget with timely alerts and reminders</p>
-            </div>
-            <div class="benefit-item">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud Backup</h3>
-                <p>Your data is automatically backed up to the cloud</p>
-            </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Download Section -->
-    <section class="download-section">
-        <div class="download-content">
-            <h2>Ready to Take Control of Your Finances?</h2>
-            <p>Download Expenses Flow now and start your journey towards better financial management!</p>
-            <a href="https://play.google.com/store/apps/details?id=com.tools.expense_tracker" class="google-play-btn" target="_blank">
-                <img src="assets/icons/image.png" alt="Get it on Google Play">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="bi bi-headset"></i>
+              </div>
+              <h4>24/7 Support</h4>
+              <p>Our dedicated support team is available around the clock to assist you with any questions or issues you
+                may have.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="bi bi-palette"></i>
+              </div>
+              <h4>Custom Design</h4>
+              <p>Every project is uniquely crafted to match your brand identity and business requirements. No
+                cookie-cutter solutions.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <h4>Scalable Solutions</h4>
+              <p>Our solutions grow with your business. We build scalable architectures that can handle your future
+                growth and expansion.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="bi bi-currency-dollar"></i>
+              </div>
+              <h4>Cost Effective</h4>
+              <p>Get maximum value for your investment. We offer competitive pricing without compromising on quality or
+                service.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="technologies section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Technologies</h2>
+        <div><span>Technologies We</span> <span class="description-title">Work With</span></div>
+      </div>
+
+      <div class="container">
+        <div class="tech-domains-wrapper" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-0">
+            <!-- Left Panel: Technology Domains -->
+            <div class="col-lg-4 tech-domains-sidebar">
+              <div class="domains-header">
+                <h3>Technology Domains</h3>
+              </div>
+              <div class="domains-list">
+                <div class="domain-item active" data-domain="frontend">
+                  <div class="domain-icon">
+                    <i class="bi bi-code-slash"></i>
+                  </div>
+                  <div class="domain-content">
+                    <span class="domain-name">Frontend Development</span>
+                    <i class="bi bi-arrow-right domain-arrow"></i>
+                  </div>
+                </div>
+
+                <div class="domain-item" data-domain="backend">
+                  <div class="domain-icon">
+                    <i class="bi bi-server"></i>
+                  </div>
+                  <div class="domain-content">
+                    <span class="domain-name">Backend Development</span>
+                    <i class="bi bi-arrow-right domain-arrow"></i>
+                  </div>
+                </div>
+
+                <div class="domain-item" data-domain="mobile">
+                  <div class="domain-icon">
+                    <i class="bi bi-phone"></i>
+                  </div>
+                  <div class="domain-content">
+                    <span class="domain-name">Mobile Development</span>
+                    <i class="bi bi-arrow-right domain-arrow"></i>
+                  </div>
+                </div>
+
+                <div class="domain-item" data-domain="database">
+                  <div class="domain-icon">
+                    <i class="bi bi-database"></i>
+                  </div>
+                  <div class="domain-content">
+                    <span class="domain-name">Database & Storage</span>
+                    <i class="bi bi-arrow-right domain-arrow"></i>
+                  </div>
+                </div>
+
+                <div class="domain-item" data-domain="cloud">
+                  <div class="domain-icon">
+                    <i class="bi bi-cloud"></i>
+                  </div>
+                  <div class="domain-content">
+                    <span class="domain-name">Cloud & DevOps</span>
+                    <i class="bi bi-arrow-right domain-arrow"></i>
+                  </div>
+                </div>
+
+                <div class="domain-item" data-domain="tools">
+                  <div class="domain-icon">
+                    <i class="bi bi-tools"></i>
+                  </div>
+                  <div class="domain-content">
+                    <span class="domain-name">Tools & Frameworks</span>
+                    <i class="bi bi-arrow-right domain-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Panel: Technologies Grid -->
+            <div class="col-lg-8 tech-grid-panel">
+              <div class="tech-panel-content">
+                <!-- Frontend Development -->
+                <div class="tech-domain-content active" data-domain-content="frontend">
+                  <div class="domain-header">
+                    <div class="domain-header-icon">
+                      <i class="bi bi-code-slash"></i>
+                    </div>
+                    <div>
+                      <h3>Frontend Development</h3>
+                      <p>Modern frameworks and libraries for building responsive web applications</p>
+                    </div>
+                  </div>
+                  <div class="tech-grid">
+                    <div class="tech-card" data-tech="react">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-code-square"></i>
+                      </div>
+                      <span class="tech-card-name">React</span>
+                    </div>
+                    <div class="tech-card" data-tech="javascript">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-filetype-js"></i>
+                      </div>
+                      <span class="tech-card-name">JavaScript</span>
+                    </div>
+                    <div class="tech-card" data-tech="typescript">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-filetype-tsx"></i>
+                      </div>
+                      <span class="tech-card-name">TypeScript</span>
+                    </div>
+                    <div class="tech-card" data-tech="html5">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-filetype-html"></i>
+                      </div>
+                      <span class="tech-card-name">HTML5</span>
+                    </div>
+                    <div class="tech-card" data-tech="css3">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-filetype-css"></i>
+                      </div>
+                      <span class="tech-card-name">CSS3</span>
+                    </div>
+                    <div class="tech-card" data-tech="bootstrap">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-bootstrap"></i>
+                      </div>
+                      <span class="tech-card-name">Bootstrap</span>
+                    </div>
+                    <div class="tech-card" data-tech="vue">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-circle"></i>
+                      </div>
+                      <span class="tech-card-name">Vue.js</span>
+                    </div>
+                    <div class="tech-card" data-tech="angular">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-hexagon"></i>
+                      </div>
+                      <span class="tech-card-name">Angular</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Backend Development -->
+                <div class="tech-domain-content" data-domain-content="backend">
+                  <div class="domain-header">
+                    <div class="domain-header-icon">
+                      <i class="bi bi-server"></i>
+                    </div>
+                    <div>
+                      <h3>Backend Development</h3>
+                      <p>Robust server-side technologies and frameworks for scalable applications</p>
+                    </div>
+                  </div>
+                  <div class="tech-grid">
+                    <div class="tech-card" data-tech="nodejs">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-filetype-node"></i>
+                      </div>
+                      <span class="tech-card-name">Node.js</span>
+                    </div>
+                    <div class="tech-card" data-tech="python">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-filetype-py"></i>
+                      </div>
+                      <span class="tech-card-name">Python</span>
+                    </div>
+                    <div class="tech-card" data-tech="php">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-filetype-php"></i>
+                      </div>
+                      <span class="tech-card-name">PHP</span>
+                    </div>
+                    <div class="tech-card" data-tech="java">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-filetype-java"></i>
+                      </div>
+                      <span class="tech-card-name">Java</span>
+                    </div>
+                    <div class="tech-card" data-tech="express">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-diagram-3"></i>
+                      </div>
+                      <span class="tech-card-name">Express.js</span>
+                    </div>
+                    <div class="tech-card" data-tech="django">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-filetype-django"></i>
+                      </div>
+                      <span class="tech-card-name">Django</span>
+                    </div>
+                    <div class="tech-card" data-tech="laravel">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-filetype-laravel"></i>
+                      </div>
+                      <span class="tech-card-name">Laravel</span>
+                    </div>
+                    <div class="tech-card" data-tech="spring">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-spring-boot"></i>
+                      </div>
+                      <span class="tech-card-name">Spring Boot</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Mobile Development -->
+                <div class="tech-domain-content" data-domain-content="mobile">
+                  <div class="domain-header">
+                    <div class="domain-header-icon">
+                      <i class="bi bi-phone"></i>
+                    </div>
+                    <div>
+                      <h3>Mobile Development</h3>
+                      <p>Cross-platform and native mobile app development solutions</p>
+                    </div>
+                  </div>
+                  <div class="tech-grid">
+                    <div class="tech-card" data-tech="android">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-android2"></i>
+                      </div>
+                      <span class="tech-card-name">Android</span>
+                    </div>
+                    <div class="tech-card" data-tech="ios">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-apple"></i>
+                      </div>
+                      <span class="tech-card-name">iOS</span>
+                    </div>
+                    <div class="tech-card" data-tech="react-native">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-phone-fill"></i>
+                      </div>
+                      <span class="tech-card-name">React Native</span>
+                    </div>
+                    <div class="tech-card" data-tech="flutter">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-phone-landscape"></i>
+                      </div>
+                      <span class="tech-card-name">Flutter</span>
+                    </div>
+                    <div class="tech-card" data-tech="ionic">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-phone-vibrate"></i>
+                      </div>
+                      <span class="tech-card-name">Ionic</span>
+                    </div>
+                    <div class="tech-card" data-tech="xamarin">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-device-ssd"></i>
+                      </div>
+                      <span class="tech-card-name">Xamarin</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Database & Storage -->
+                <div class="tech-domain-content" data-domain-content="database">
+                  <div class="domain-header">
+                    <div class="domain-header-icon">
+                      <i class="bi bi-database"></i>
+                    </div>
+                    <div>
+                      <h3>Database & Storage</h3>
+                      <p>Reliable database solutions for data management and storage</p>
+                    </div>
+                  </div>
+                  <div class="tech-grid">
+                    <div class="tech-card" data-tech="mongodb">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-database"></i>
+                      </div>
+                      <span class="tech-card-name">MongoDB</span>
+                    </div>
+                    <div class="tech-card" data-tech="mysql">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-database-fill"></i>
+                      </div>
+                      <span class="tech-card-name">MySQL</span>
+                    </div>
+                    <div class="tech-card" data-tech="postgresql">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-database-check"></i>
+                      </div>
+                      <span class="tech-card-name">PostgreSQL</span>
+                    </div>
+                    <div class="tech-card" data-tech="redis">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-database-add"></i>
+                      </div>
+                      <span class="tech-card-name">Redis</span>
+                    </div>
+                    <div class="tech-card" data-tech="firebase">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-fire"></i>
+                      </div>
+                      <span class="tech-card-name">Firebase</span>
+                    </div>
+                    <div class="tech-card" data-tech="sqlite">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-database-gear"></i>
+                      </div>
+                      <span class="tech-card-name">SQLite</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="tech-domain-content" data-domain-content="cloud">
+                  <div class="domain-header">
+                    <div class="domain-header-icon">
+                      <i class="bi bi-cloud"></i>
+                    </div>
+                    <div>
+                      <h3>Cloud & DevOps</h3>
+                      <p>Cloud platforms and DevOps tools for scalable infrastructure</p>
+                    </div>
+                  </div>
+                  <div class="tech-grid">
+                    <div class="tech-card" data-tech="aws">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-cloud"></i>
+                      </div>
+                      <span class="tech-card-name">AWS</span>
+                    </div>
+                    <div class="tech-card" data-tech="azure">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-cloud-upload"></i>
+                      </div>
+                      <span class="tech-card-name">Azure</span>
+                    </div>
+                    <div class="tech-card" data-tech="gcp">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-cloud-download"></i>
+                      </div>
+                      <span class="tech-card-name">Google Cloud</span>
+                    </div>
+                    <div class="tech-card" data-tech="docker">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-box"></i>
+                      </div>
+                      <span class="tech-card-name">Docker</span>
+                    </div>
+                    <div class="tech-card" data-tech="kubernetes">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-diagram-3-fill"></i>
+                      </div>
+                      <span class="tech-card-name">Kubernetes</span>
+                    </div>
+                    <div class="tech-card" data-tech="jenkins">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-gear"></i>
+                      </div>
+                      <span class="tech-card-name">Jenkins</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tools & Frameworks -->
+                <div class="tech-domain-content" data-domain-content="tools">
+                  <div class="domain-header">
+                    <div class="domain-header-icon">
+                      <i class="bi bi-tools"></i>
+                    </div>
+                    <div>
+                      <h3>Tools & Frameworks</h3>
+                      <p>Essential development tools and frameworks for modern software development</p>
+                    </div>
+                  </div>
+                  <div class="tech-grid">
+                    <div class="tech-card" data-tech="git">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-git"></i>
+                      </div>
+                      <span class="tech-card-name">Git</span>
+                    </div>
+                    <div class="tech-card" data-tech="github">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-github"></i>
+                      </div>
+                      <span class="tech-card-name">GitHub</span>
+                    </div>
+                    <div class="tech-card" data-tech="gitlab">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-gitlab"></i>
+                      </div>
+                      <span class="tech-card-name">GitLab</span>
+                    </div>
+                    <div class="tech-card" data-tech="npm">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-box-seam"></i>
+                      </div>
+                      <span class="tech-card-name">NPM</span>
+                    </div>
+                    <div class="tech-card" data-tech="webpack">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-stack"></i>
+                      </div>
+                      <span class="tech-card-name">Webpack</span>
+                    </div>
+                    <div class="tech-card" data-tech="vite">
+                      <div class="tech-card-icon">
+                        <i class="bi bi-lightning"></i>
+                      </div>
+                      <span class="tech-card-name">Vite</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Technologies Section -->
+
+    <section id="steps" class="steps section">
+      <!--How we Work Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Steps</h2>
+        <div><span>How we</span> <span class="description-title">Work</span></div>
+      </div><!-- End Section Title -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="steps-wrapper">
+          <div class="step-item" data-aos="fade-right" data-aos-delay="200">
+            <div class="step-content">
+              <div class="step-icon">
+                <i class="bi bi-lightbulb"></i>
+              </div>
+              <div class="step-info">
+                <span class="step-number">Step 01</span>
+                <h3>Initial Consultation</h3>
+                <p>Conducting thorough discovery sessions to understand your business requirements and objectives. Our
+                  expert team analyzes your needs to create a customized approach.</p>
+              </div>
+            </div>
+          </div><!-- End Step Item -->
+
+          <div class="step-item" data-aos="fade-left" data-aos-delay="300">
+            <div class="step-content">
+              <div class="step-icon">
+                <i class="bi bi-gear"></i>
+              </div>
+              <div class="step-info">
+                <span class="step-number">Step 02</span>
+                <h3>Planning &amp; Strategy</h3>
+                <p>Developing comprehensive strategies and detailed project plans based on the initial consultation. We
+                  create actionable roadmaps with clear milestones and deliverables.</p>
+              </div>
+            </div>
+          </div><!-- End Step Item -->
+
+          <div class="step-item" data-aos="fade-right" data-aos-delay="400">
+            <div class="step-content">
+              <div class="step-icon">
+                <i class="bi bi-bar-chart"></i>
+              </div>
+              <div class="step-info">
+                <span class="step-number">Step 03</span>
+                <h3>Development Phase</h3>
+                <p>Executing the planned strategies with precision and agility. Our team implements solutions while
+                  maintaining constant communication and progress updates.</p>
+              </div>
+            </div>
+          </div><!-- End Step Item -->
+
+          <div class="step-item" data-aos="fade-left" data-aos-delay="500">
+            <div class="step-content">
+              <div class="step-icon">
+                <i class="bi bi-check2-circle"></i>
+              </div>
+              <div class="step-info">
+                <span class="step-number">Step 04</span>
+                <h3>Launch &amp; Support</h3>
+                <p>Ensuring smooth deployment and providing ongoing support for implemented solutions. We monitor
+                  performance and make necessary adjustments for optimal results.</p>
+              </div>
+            </div>
+          </div><!-- End Step Item -->
+
+        </div>
+
+      </div>
+    </section><!-- How we Work /Steps Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <div><span>What Our</span> <span class="description-title">Clients Say</span></div>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-text">"Adobixtech transformed our business with their exceptional mobile app
+                development. The team was professional, responsive, and delivered beyond our expectations."</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <h5>Sarah Johnson</h5>
+                  <span>CEO, TechStart Inc.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-text">"Their web development services are outstanding. Our website traffic increased
+                by 300% after the redesign. Highly recommend their services!"</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <h5>Michael Chen</h5>
+                  <span>Founder, Digital Solutions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-text">"The social media management team helped us grow our online presence
+                significantly. Our engagement rates have never been better!"</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <h5>Emily Rodriguez</h5>
+                  <span>Marketing Director, BrandCo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="cta section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8" data-aos="fade-up">
+            <h3>Ready to Transform Your Digital Presence?</h3>
+            <p>Let's discuss how we can help bring your vision to life. Get in touch with us today and take the first
+              step towards digital excellence.</p>
+          </div>
+          <div class="col-lg-4 text-center text-lg-end" data-aos="fade-up" data-aos-delay="100">
+            <a href="mailto:adobixtech@gmail.com" class="cta-btn">
+              <span>Get Started Now</span>
+              <i class="bi bi-arrow-right"></i>
             </a>
+          </div>
         </div>
-    </section>
+      </div>
+    </section><!-- End Call to Action Section -->
 
-    <div id="footer"></div>
+  </main>
+
+  <!-- Technology Details Modal -->
+  <div id="techModal" class="tech-modal">
+    <div class="tech-modal-overlay"></div>
+    <div class="tech-modal-container">
+      <button class="tech-modal-close" aria-label="Close modal">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <div class="tech-modal-content">
+        <div class="tech-modal-header">
+          <div class="tech-modal-icon-wrapper">
+            <div class="tech-modal-icon" id="techModalIcon"></div>
+          </div>
+          <h2 id="techModalTitle"></h2>
+        </div>
+        <div class="tech-modal-body">
+          <p id="techModalDescription" class="tech-description"></p>
+          <div class="tech-details">
+            <div class="tech-detail-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span id="techModalUseCase"></span>
+            </div>
+            <div class="tech-detail-item">
+              <i class="bi bi-star-fill"></i>
+              <span id="techModalExpertise"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="footer-logo">
+            <span class="sitename">Adobix Tech</span>
+          </a>
+          <p>Empowering businesses through innovative digital solutions. We transform ideas into reality with
+            cutting-edge technology and exceptional service.</p>
+          <div class="social-links">
+            <a href="https://x.com/adobixtech" target="_blank" aria-label="Twitter" rel="noopener noreferrer">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.instagram.com/adobixtech" target="_blank" aria-label="Instagram"
+              rel="noopener noreferrer">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/adobix-tech" target="_blank" aria-label="LinkedIn"
+              rel="noopener noreferrer">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-6 footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="#services">Terms of Service</a></li>
+            <li><a href="#services">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact">
+          <h4>Get In Touch</h4>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="bi bi-envelope"></i>
+              <a href="mailto:adobixtech@gmail.com">adobixtech@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 copyright">
+            <p>&copy; <span id="currentYear"></span> <strong>Adobixtech</strong>. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end footer-credits">
+            <p class="mb-0">Made with <i class="bi bi-heart-fill"></i> for innovation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="adobix_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="adobix_assets/vendor/php-email-form/validate.js"></script>
+  <script src="adobix_assets/vendor/aos/aos.js"></script>
+  <script src="adobix_assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="adobix_assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="adobix_assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="adobix_assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="adobix_assets/js/main.js"></script>
 
 </body>
+
 </html>

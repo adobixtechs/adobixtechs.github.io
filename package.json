@@ -1,0 +1,19 @@
+{
+  "name": "adobix-site",
+  "version": "1.0.0",
+  "description": "Adobix Technologies website",
+  "scripts": {
+    "deploy": "firebase deploy",
+    "deploy:hosting": "firebase deploy --only hosting",
+    "serve": "firebase serve",
+    "login": "firebase login",
+    "init": "firebase init"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+
