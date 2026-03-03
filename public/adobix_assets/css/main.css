@@ -2520,6 +2520,13 @@ section,
   }
 }
 
+/* Tablet refinements for services (iPad, small laptops) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .services .service-card {
+    padding: 32px 28px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Project Section
 --------------------------------------------------------------*/
@@ -7914,6 +7921,15 @@ section,
 @media (max-width: 576px) {
   .products-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet refinements for apps grid (e.g., iPad) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .products-grid {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
