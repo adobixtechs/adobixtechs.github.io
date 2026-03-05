@@ -158,7 +158,11 @@
       document.getElementById("appWhy").textContent = app.why;
       const fl = document.getElementById("appFeatures"); fl.innerHTML = ""; app.features.forEach(f => { const li = document.createElement("li"); li.textContent = f; fl.appendChild(li); });
       const bf = document.getElementById("appBestFor"); bf.innerHTML = ""; app.bestFor.forEach(b => { const li = document.createElement("li"); li.textContent = b; bf.appendChild(li); });
-      const pl = document.getElementById("privacyLink"); if (pl) { const map = { "limitly": "limitly-privacy.html", "habit-loop-pro": "habit-loop-pro-privacy.html", "habit-loop": "habit-loop-privacy.html", "focus-mode": "focus-mode-privacy.html", "phone-pro": "phone-pro-privacy.html", "eye-shield": "eye-shield-privacy.html", "expense-pro": "expense-pro-privacy.html", "expense": "expense-privacy.html", "encrypted-qr": "encrypted-qr-privacy.html", "qr": "qr-privacy.html", "internet-blocker": "internet-blocker-privacy.html" }; pl.href = map[key] || "privacy-policy.html"; }
+      const pl = document.getElementById("privacyLink"); 
+      if (pl) { 
+        // Use a single, company-wide privacy policy page for all apps
+        pl.href = "/privacy-policy.html"; 
+      }
       const playLink = document.getElementById("playStoreLink"); if (playLink && app.playStoreUrl) { playLink.href = app.playStoreUrl; playLink.style.display = "inline-block"; } else if (playLink) { playLink.style.display = "none"; }
     }
     loadApp();
