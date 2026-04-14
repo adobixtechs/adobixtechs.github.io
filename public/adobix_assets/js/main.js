@@ -10,6 +10,30 @@
   "use strict";
 
   /**
+   * Theme management (light/dark with persistence)
+   */
+  const root = document.documentElement;
+  const storedTheme = localStorage.getItem('site-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+
+  function applyTheme(theme) {
+    const normalizedTheme = theme === 'dark' ? 'dark' : 'light';
+    root.setAttribute('data-theme', normalizedTheme);
+    const themeToggleIcon = document.querySelector('[data-theme-icon]');
+    const themeToggleBtn = document.querySelector('[data-theme-toggle]');
+    if (themeToggleIcon) {
+      themeToggleIcon.className = normalizedTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+    }
+    if (themeToggleBtn) {
+      themeToggleBtn.setAttribute('aria-label', normalizedTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      themeToggleBtn.setAttribute('title', normalizedTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+  }
+
+  applyTheme(initialTheme);
+
+  /**
    * Apply .scrolled class to the body and header as the page is scrolled down
    */
   function toggleScrolled() {
@@ -28,6 +52,17 @@
 
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeToggleBtn = document.querySelector('[data-theme-toggle]');
+    if (!themeToggleBtn) return;
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('site-theme', nextTheme);
+      applyTheme(nextTheme);
+    });
+  });
 
   /**
    * Mobile nav toggle

@@ -1,6 +1,6 @@
 /* Policy subpages: app-details + app privacy – use with main.css for index theme */
 .app-details-section {
-  padding: 140px 0 80px;
+  padding: 74px 0 56px;
   min-height: 50vh;
 }
 /* App privacy pages have no site header – use smaller top padding */
@@ -14,50 +14,76 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+.app-details-page .app-container,
+.app-privacy-page .page {
+  max-width: 940px;
+}
 .app-header {
   display: flex;
   gap: 25px;
-  margin-bottom: 40px;
-  align-items: flex-start;
+  margin-bottom: 28px;
+  align-items: center;
+}
+.app-topbar {
+  margin-bottom: 12px;
+}
+.app-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.86rem;
+  background: var(--surface-elevated);
+}
+.app-back-link:hover {
+  color: var(--accent-color);
+  border-color: var(--border-hover);
+  background: var(--surface-hover);
 }
 .app-icon {
-  width: 90px;
-  height: 90px;
+  width: 84px;
+  height: 84px;
   border-radius: 22px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   object-fit: cover;
 }
-.app-header-content { flex: 1; }
-.app-title { font-size: 2.2rem; margin-bottom: 10px; }
-.app-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-.badge {
-  background: var(--surface-color);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-.app-description { color: var(--text-secondary); font-size: 1rem; }
+.app-header-content { flex: 1; max-width: 720px; }
+.app-title { font-size: 2.2rem; margin-bottom: 8px; }
+.app-description { color: var(--text-secondary); font-size: 1.05rem; margin: 0; }
 .app-card {
   background: var(--surface-elevated);
-  border-radius: 18px;
-  padding: 25px;
-  margin-bottom: 25px;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 20px;
   border: 1px solid var(--border-color);
+  box-shadow: 0 6px 18px var(--shadow-sm);
 }
 .app-card h2, .app-card h3 { margin-bottom: 15px; color: var(--heading-color); }
 .app-card p { color: var(--text-secondary); line-height: 1.6; }
 .app-card ul { padding-left: 20px; }
-.app-card ul li { margin-bottom: 8px; color: var(--text-secondary); }
-.app-actions { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 30px; }
+.app-card ul li { margin-bottom: 10px; color: var(--text-secondary); }
+.app-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
 .btn {
-  padding: 14px 25px;
-  border-radius: 12px;
+  padding: 11px 18px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
   transition: 0.3s;
+}
+.btn-primary {
+  background: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  color: var(--contrast-color);
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--contrast-color);
 }
 .btn-secondary {
   background: transparent;
@@ -71,7 +97,7 @@
   position: static;
   display: flex;
   gap: 18px;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 28px;
 }
 .app-privacy-page .icon {
@@ -92,11 +118,11 @@
   justify-content: center;
 }
 .app-privacy-page .header-icon img { width: 100%; height: 100%; object-fit: cover; }
-.app-privacy-page .header-text h1 { font-size: 1.9rem; margin: 0 0 6px; }
-.app-privacy-page .header-text p { margin: 0 0 4px; font-size: 0.95rem; color: var(--text-tertiary); }
-.app-privacy-page .header-meta { font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 4px; }
+.app-privacy-page .header-text h1 { font-size: 1.95rem; margin: 0; }
+.app-privacy-page .header-text p { display: none !important; }
+.app-privacy-page .header-meta { display: none !important; }
 .app-privacy-page .badge-app {
-  display: inline-flex;
+  display: none !important;
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
@@ -115,6 +141,7 @@
   border: 1px solid var(--border-color);
   padding: 22px;
   margin-bottom: 18px;
+  box-shadow: 0 6px 18px var(--shadow-sm);
 }
 .app-privacy-page .card h2 { font-size: 1.15rem; margin: 0 0 8px; }
 .app-privacy-page .card h3 { font-size: 1rem; margin: 14px 0 6px; }
@@ -134,6 +161,35 @@
   transition: 0.2s;
 }
 .app-privacy-page .back-link:hover { background: var(--surface-hover); }
+.policy-toc {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 0 0 16px;
+}
+.policy-toc h3 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+}
+.policy-toc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.policy-toc-links a {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: var(--surface-color);
+}
+.policy-toc-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--border-hover);
+}
 
 /* Main privacy policy page without site header */
 body.policy-only .privacy-policy-section {
@@ -141,7 +197,32 @@ body.policy-only .privacy-policy-section {
 }
 
 @media (max-width: 768px) {
-  .app-details-section, .app-privacy-section { padding: 120px 16px 60px; }
+  .app-details-section, .app-privacy-section { padding: 62px 16px 44px; }
   .app-header, .app-privacy-page .page .header { flex-direction: column; align-items: flex-start; }
   .app-privacy-page .page .header { align-items: center; text-align: center; }
+  .app-container {
+    padding-bottom: 92px;
+  }
+  .app-actions {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 10px;
+    background: color-mix(in srgb, var(--background-color), transparent 10%);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 8px;
+    backdrop-filter: blur(8px);
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  }
+  .app-details-page.show-mobile-cta .app-actions {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .app-actions .btn { width: 100%; text-align: center; }
 }

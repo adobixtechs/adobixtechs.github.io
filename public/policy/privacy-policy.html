@@ -4,6 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('site-theme');
+      document.documentElement.setAttribute('data-theme', savedTheme === 'dark' ? 'dark' : 'light');
+    })();
+  </script>
   <title>Privacy Policy - Adobix Tech</title>
 
   <!-- Favicon -->
