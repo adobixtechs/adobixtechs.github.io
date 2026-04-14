@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>QuickQR · Fast QR & Barcode Scanner | Adobix Tech</title>
+  <script>
+    (function(){
+      const stored = localStorage.getItem('site-theme');
+      document.documentElement.setAttribute('data-theme', stored === 'dark' ? 'dark' : 'light');
+    })();
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="styles/qr-details.css" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+  <div class="back-nav">
+    <a href="../../../index.html#products" class="back-link"><i class="bi bi-arrow-left-short"></i> Back to Apps</a>
+  </div>
+
+  <!-- hero with both scan and generate -->
+  <div class="hero-dual">
+    <div class="hero-icon">
+      <img src="../../adobix_assets/img/projects/qr.png" alt="QuickQR" onerror="this.src='https://placehold.co/400x400?text=QuickQR';">
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge"><i class="bi bi-lightning-charge"></i> Fast · Private · Offline</div>
+      <h1 class="hero-title">QuickQR: QR & Barcode Scanner</h1>
+      <p class="hero-desc">Fast QR code scanner, barcode reader, and QR generator. Create password‑protected codes, scan offline, and keep your activity private — no tracking.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.tools.quickqr.pro&hl=en_IN" class="btn-download" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-google-play"></i> Download QuickQR
+      </a>
+    </div>
+  </div>
+
+  <!-- three core features -->
+  <div class="section-title"><i class="bi bi-stars"></i> Why QuickQR?</div>
+  <div class="features-row">
+    <div class="feature-card">
+      <div class="feature-icon"><i class="bi bi-upc-scan"></i></div>
+      <h3>Fast QR & barcode scan</h3>
+      <p>Point your camera to instantly read URLs, contact info, Wi-Fi, products (UPC/EAN), and more. Works offline.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="bi bi-qr-code"></i></div>
+      <h3>Easy QR generation</h3>
+      <p>Create codes for websites, Wi‑Fi, vCard, text, SMS, email, map locations — with optional password protection.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="bi bi-incognito"></i></div>
+      <h3>Truly private</h3>
+      <p>No tracking, no unnecessary permissions. Your scan and generate history stays on your device.</p>
+    </div>
+  </div>
+
+  <!-- what you can generate (types) -->
+  <div class="types-section">
+    <div class="types-title"><i class="bi bi-grid-3x3"></i> Generate QR codes for</div>
+    <div class="type-chips">
+      <span class="chip"><i class="bi bi-link"></i> Websites</span>
+      <span class="chip"><i class="bi bi-wifi"></i> Wi‑Fi access</span>
+      <span class="chip"><i class="bi bi-person-badge"></i> Contact (vCard)</span>
+      <span class="chip"><i class="bi bi-text-paragraph"></i> Plain text</span>
+      <span class="chip"><i class="bi bi-envelope"></i> Email / SMS</span>
+      <span class="chip"><i class="bi bi-telephone"></i> Phone number</span>
+      <span class="chip"><i class="bi bi-geo-alt"></i> Map location</span>
+      <span class="chip"><i class="bi bi-lock"></i> Encrypted text</span>
+    </div>
+  </div>
+
+  <!-- additional helpful features -->
+  <div class="features-row" style="margin-bottom: 44px;">
+    <div class="feature-card">
+      <div class="feature-icon"><i class="bi bi-clock-history"></i></div>
+      <h3>History & favorites</h3>
+      <p>Quickly find codes you've scanned or generated before. Never lose an important QR again.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="bi bi-lightbulb"></i></div>
+      <h3>Scan helper</h3>
+      <p>Flashlight and zoom options to read codes in low light or from a distance.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="bi bi-phone"></i></div>
+      <h3>Lightweight & fast</h3>
+      <p>Small app size, no battery drain. Optimized for quick launches and smooth scanning.</p>
+    </div>
+  </div>
+
+  <!-- privacy and offline note -->
+  <div class="privacy-card">
+    <div class="privacy-text">
+      <strong><i class="bi bi-shield-check"></i> No data collected · Works offline</strong>
+      <p>Scan QR codes and barcodes without internet. No tracking, no accounts — just fast, private scanning and generating.</p>
+    </div>
+    <a href="../qr-privacy.html" class="privacy-link">Privacy policy →</a>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <p><i class="bi bi-envelope"></i> Support: <a href="mailto:adobixtech@gmail.com">adobixtech@gmail.com</a> &nbsp;|&nbsp;
+      <i class="bi bi-qr-code"></i> Simple, secure QR & barcode tool</p>
+    <p style="margin-top: 12px;">© Adobix Tech — Scan, generate, and stay private</p>
+  </div>
+</div>
+</body>
+</html>

@@ -7601,6 +7601,32 @@ section,
   justify-content: center;
 }
 
+.products-grid-actions {
+  margin-top: 10px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.products-view-more-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 7px 14px;
+  background: var(--surface-elevated);
+}
+
+.products-view-more-link:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
 .products-cta-btn {
   display: inline-flex;
   align-items: center;
@@ -7624,7 +7650,27 @@ section,
   gap: 1.5rem;
 }
 
+.featured-products-grid[data-products-marquee-track] {
+  display: flex;
+  overflow: hidden;
+  gap: 1.5rem;
+  scroll-behavior: auto;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+.featured-products-grid[data-products-marquee-track] .product-card {
+  flex: 0 0 calc((100% - 3rem) / 3);
+}
+
+.featured-products-grid[data-products-marquee-track].is-dragging {
+  cursor: grabbing;
+}
+
 .product-card {
+  --app-accent: var(--accent-color);
   position: relative;
   width: 100%;
   height: 100%;
@@ -7633,7 +7679,7 @@ section,
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--border-color);
-  box-shadow: 0 4px 20px var(--shadow-md);
+  box-shadow: 0 4px 20px var(--shadow-md), 0 0 0 1px color-mix(in srgb, var(--app-accent), transparent 92%);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
@@ -7644,15 +7690,27 @@ section,
   content: "";
   position: absolute;
   inset: 0;
-  background: color-mix(in srgb, var(--accent-color), transparent 94%);
+  background: color-mix(in srgb, var(--app-accent), transparent 92%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
+.product-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--app-accent), #ffffff 8%), color-mix(in srgb, var(--app-accent), transparent 25%));
+  opacity: 0.9;
+  z-index: 1;
+}
+
 .product-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 28px var(--shadow-md);
-  border-color: var(--border-hover);
+  box-shadow: 0 10px 28px var(--shadow-md), 0 10px 24px color-mix(in srgb, var(--app-accent), transparent 84%);
+  border-color: color-mix(in srgb, var(--app-accent), var(--border-hover) 55%);
   background: var(--surface-elevated);
 }
 
@@ -7674,16 +7732,16 @@ section,
   height: 70px;
   object-fit: cover;
   border-radius: 16px;
-  border: 1px solid var(--border-active);
+  border: 1px solid color-mix(in srgb, var(--app-accent), var(--border-active) 60%);
   background: var(--surface-color);
   padding: 8px;
-  box-shadow: 0 4px 12px var(--shadow-sm);
+  box-shadow: 0 4px 12px var(--shadow-sm), 0 0 0 1px color-mix(in srgb, var(--app-accent), transparent 84%);
   transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease;
 }
 
 .product-card:hover .product-image {
   transform: scale(1.02);
-  box-shadow: 0 6px 14px var(--shadow-sm);
+  box-shadow: 0 6px 14px var(--shadow-sm), 0 0 0 1px color-mix(in srgb, var(--app-accent), transparent 75%);
   background: var(--surface-color);
 }
 
@@ -7699,7 +7757,7 @@ section,
 .product-title {
   font-size: 1.28rem;
   font-weight: 700;
-  color: var(--heading-color);
+  color: color-mix(in srgb, var(--heading-color), var(--app-accent) 14%);
   margin-bottom: 10px;
   line-height: 1.3;
   letter-spacing: -0.015em;
@@ -7732,16 +7790,18 @@ section,
   display: flex;
   gap: 12px;
   margin-top: auto;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .product-btn {
-  flex: 1 1 0;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 14px;
   min-height: 42px;
+  min-width: 140px;
   font-size: var(--text-sm);
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -7752,17 +7812,17 @@ section,
 }
 
 .product-btn-primary {
-  background: color-mix(in srgb, var(--accent-color), transparent 85%);
-  color: var(--accent-color);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 45%);
+  background: color-mix(in srgb, var(--app-accent), transparent 80%);
+  color: color-mix(in srgb, var(--app-accent), #ffffff 12%);
+  border-color: color-mix(in srgb, var(--app-accent), transparent 45%);
 }
 
 .product-btn-primary:hover {
-  background: var(--accent-color);
+  background: var(--app-accent);
   color: var(--contrast-color);
-  border-color: var(--accent-color);
+  border-color: var(--app-accent);
   transform: translateY(-1px);
-  box-shadow: 0 6px 12px color-mix(in srgb, var(--accent-color), transparent 75%);
+  box-shadow: 0 6px 12px color-mix(in srgb, var(--app-accent), transparent 75%);
 }
 
 .product-btn-secondary {
@@ -7785,6 +7845,9 @@ section,
 
   .products-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .featured-products-grid[data-products-marquee-track] .product-card {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
   }
 
   .proof-grid {
@@ -7828,6 +7891,7 @@ section,
     min-height: 40px;
     font-size: 0.8rem;
     padding: 10px 12px;
+    min-width: 128px;
   }
 }
 
@@ -7843,6 +7907,9 @@ section,
   .products-grid {
     grid-template-columns: 1fr;
     gap: 0.9rem;
+  }
+  .featured-products-grid[data-products-marquee-track] .product-card {
+    flex: 0 0 100%;
   }
 
   .proof-grid {
@@ -7870,9 +7937,126 @@ section,
   .product-btn {
     padding: 10px 10px;
     font-size: 0.78rem;
+    min-width: 120px;
   }
 
   .product-footer {
     gap: 8px;
   }
+}
+
+/*--------------------------------------------------------------
+# Global Color Enrichment Across Website
+--------------------------------------------------------------*/
+.services .service-card,
+.features .feature-item,
+.testimonials .testimonial-card,
+.steps .step-item {
+  --section-accent: var(--accent-color);
+}
+
+/* Services accents by card */
+.services .row > [class*="col-"]:nth-child(1) .service-card { --section-accent: #4f46e5; }
+.services .row > [class*="col-"]:nth-child(2) .service-card { --section-accent: #06b6d4; }
+.services .row > [class*="col-"]:nth-child(3) .service-card { --section-accent: #10b981; }
+
+.services .service-card::before {
+  background: var(--section-accent);
+}
+.services .service-card::after {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--section-accent), transparent 88%) 0%, transparent 100%);
+}
+.services .service-card:hover {
+  border-color: color-mix(in srgb, var(--section-accent), var(--border-active) 40%);
+  box-shadow: 0 12px 40px var(--shadow-lg), 0 0 0 1px color-mix(in srgb, var(--section-accent), transparent 55%);
+}
+.services .service-card .service-icon {
+  background: color-mix(in srgb, var(--section-accent), transparent 86%);
+  border-color: color-mix(in srgb, var(--section-accent), transparent 45%);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--section-accent), transparent 70%);
+}
+.services .service-card .service-icon i,
+.services .service-card:hover h3 {
+  color: var(--section-accent);
+}
+.services .service-card:hover .service-icon {
+  background: linear-gradient(135deg, var(--section-accent) 0%, color-mix(in srgb, var(--section-accent), black 10%) 100%);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--section-accent), transparent 55%);
+}
+
+/* Features accents by item */
+.features .row > [class*="col-"]:nth-child(1) .feature-item { --section-accent: #4f46e5; }
+.features .row > [class*="col-"]:nth-child(2) .feature-item { --section-accent: #0ea5e9; }
+.features .row > [class*="col-"]:nth-child(3) .feature-item { --section-accent: #10b981; }
+.features .row > [class*="col-"]:nth-child(4) .feature-item { --section-accent: #f59e0b; }
+.features .row > [class*="col-"]:nth-child(5) .feature-item { --section-accent: #ec4899; }
+.features .row > [class*="col-"]:nth-child(6) .feature-item { --section-accent: #22c55e; }
+
+.features .feature-item::before {
+  background: color-mix(in srgb, var(--section-accent), transparent 88%);
+}
+.features .feature-item:hover {
+  border-color: color-mix(in srgb, var(--section-accent), transparent 40%);
+  box-shadow: 0 12px 40px var(--shadow-lg), 0 0 0 1px color-mix(in srgb, var(--section-accent), transparent 55%);
+}
+.features .feature-icon {
+  background: color-mix(in srgb, var(--section-accent), transparent 86%);
+  border-color: color-mix(in srgb, var(--section-accent), transparent 45%);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--section-accent), transparent 70%);
+}
+.features .feature-icon i,
+.features .feature-item:hover h4 {
+  color: var(--section-accent);
+}
+.features .feature-item:hover .feature-icon {
+  background: var(--section-accent);
+  border-color: var(--section-accent);
+}
+
+/* Steps accents by timeline item */
+.steps .step-item:nth-child(1) { --section-accent: #4f46e5; }
+.steps .step-item:nth-child(2) { --section-accent: #06b6d4; }
+.steps .step-item:nth-child(3) { --section-accent: #10b981; }
+.steps .step-item:nth-child(4) { --section-accent: #f59e0b; }
+
+.steps .step-number,
+.steps .step-icon i {
+  color: var(--section-accent);
+}
+.steps .step-icon {
+  border-color: color-mix(in srgb, var(--section-accent), transparent 45%);
+  box-shadow: 0 8px 25px var(--shadow-md), 0 0 0 3px color-mix(in srgb, var(--section-accent), transparent 85%);
+}
+.steps .step-item:hover .step-icon {
+  border-color: var(--section-accent);
+  box-shadow: 0 12px 35px color-mix(in srgb, var(--section-accent), transparent 60%), 0 0 0 3px color-mix(in srgb, var(--section-accent), transparent 30%);
+}
+.steps .step-item:hover .step-info {
+  border-color: color-mix(in srgb, var(--section-accent), transparent 45%);
+  box-shadow: 0 12px 40px var(--shadow-lg), 0 0 0 1px color-mix(in srgb, var(--section-accent), transparent 55%);
+}
+
+/* Testimonials accents by card */
+.testimonials .row > [class*="col-"]:nth-child(1) .testimonial-card { --section-accent: #4f46e5; }
+.testimonials .row > [class*="col-"]:nth-child(2) .testimonial-card { --section-accent: #0ea5e9; }
+.testimonials .row > [class*="col-"]:nth-child(3) .testimonial-card { --section-accent: #10b981; }
+
+.testimonials .testimonial-card::before {
+  color: color-mix(in srgb, var(--section-accent), transparent 72%);
+}
+.testimonials .testimonial-card:hover {
+  border-color: color-mix(in srgb, var(--section-accent), transparent 45%);
+  box-shadow: 0 12px 40px var(--shadow-lg), 0 0 0 1px color-mix(in srgb, var(--section-accent), transparent 55%);
+}
+.testimonials .testimonial-author {
+  border-top-color: color-mix(in srgb, var(--section-accent), transparent 80%);
+}
+
+/* Footer links/social get richer color */
+.footer .social-links a:hover {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 65%);
+}
+.footer .footer-links ul a:hover {
+  color: color-mix(in srgb, var(--accent-color), #ffffff 12%);
 }

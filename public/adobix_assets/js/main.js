@@ -15,7 +15,8 @@
   const root = document.documentElement;
   const storedTheme = localStorage.getItem('site-theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+  const isDetailsPage = window.location.pathname.includes('/public/policy/details/');
+  const initialTheme = isDetailsPage ? 'light' : (storedTheme || (prefersDark ? 'dark' : 'light'));
 
   function applyTheme(theme) {
     const normalizedTheme = theme === 'dark' ? 'dark' : 'light';
@@ -62,6 +63,123 @@
       localStorage.setItem('site-theme', nextTheme);
       applyTheme(nextTheme);
     });
+  });
+
+  /**
+   * Product cards: app-specific accent colors
+   */
+  document.addEventListener('DOMContentLoaded', () => {
+    const APP_ACCENTS = {
+      "limitly": "#ef4444",
+      "habit loop pro": "#22c55e",
+      "focus mode": "#6366f1",
+      "phone pro": "#14b8a6",
+      "eye shield": "#0ea5e9",
+      "expense pro": "#10b981",
+      "encrypted qr": "#8b5cf6",
+      "qr": "#64748b",
+      "battery vitals": "#f59e0b",
+      "internet blocker": "#f43f5e",
+      "expense loop": "#16a34a"
+    };
+
+    document.querySelectorAll('.product-card').forEach((card) => {
+      const title = card.querySelector('.product-title');
+      if (!title) return;
+      const key = title.textContent.trim().toLowerCase();
+      const accent = APP_ACCENTS[key] || "#7c9cff";
+      card.style.setProperty('--app-accent', accent);
+    });
+  });
+
+  /**
+   * Products marquee: smooth infinite slide (no stops)
+   */
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('[data-products-marquee-track]');
+    if (!track) return;
+
+    if (!track.dataset.loopReady) {
+      const originals = Array.from(track.children);
+      originals.forEach((node) => track.appendChild(node.cloneNode(true)));
+      track.dataset.loopReady = 'true';
+    }
+
+    const originalWidth = track.scrollWidth / 2;
+    const speed = 0.8;
+    let rafId = null;
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartScroll = 0;
+    let movedDuringDrag = false;
+
+    const tick = () => {
+      track.scrollLeft += speed;
+      if (track.scrollLeft >= originalWidth) {
+        track.scrollLeft -= originalWidth;
+      }
+      rafId = window.requestAnimationFrame(tick);
+    };
+
+    const start = () => {
+      if (rafId) return;
+      rafId = window.requestAnimationFrame(tick);
+    };
+
+    const stop = () => {
+      if (!rafId) return;
+      window.cancelAnimationFrame(rafId);
+      rafId = null;
+    };
+
+    const getClientX = (evt) => {
+      if (evt.touches && evt.touches.length) return evt.touches[0].clientX;
+      if (evt.changedTouches && evt.changedTouches.length) return evt.changedTouches[0].clientX;
+      return evt.clientX;
+    };
+
+    const onDragStart = (evt) => {
+      isDragging = true;
+      movedDuringDrag = false;
+      dragStartX = getClientX(evt);
+      dragStartScroll = track.scrollLeft;
+      track.classList.add('is-dragging');
+      stop();
+    };
+
+    const onDragMove = (evt) => {
+      if (!isDragging) return;
+      const currentX = getClientX(evt);
+      const deltaX = currentX - dragStartX;
+      if (Math.abs(deltaX) > 4) movedDuringDrag = true;
+      track.scrollLeft = dragStartScroll - deltaX;
+    };
+
+    const onDragEnd = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      track.classList.remove('is-dragging');
+      start();
+    };
+
+    track.addEventListener('mousedown', onDragStart);
+    window.addEventListener('mousemove', onDragMove);
+    window.addEventListener('mouseup', onDragEnd);
+
+    track.addEventListener('touchstart', onDragStart, { passive: true });
+    track.addEventListener('touchmove', onDragMove, { passive: true });
+    track.addEventListener('touchend', onDragEnd, { passive: true });
+    track.addEventListener('touchcancel', onDragEnd, { passive: true });
+
+    track.addEventListener('click', (evt) => {
+      if (movedDuringDrag) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        movedDuringDrag = false;
+      }
+    }, true);
+
+    start();
   });
 
   /**
@@ -122,13 +240,15 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
