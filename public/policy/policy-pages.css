@@ -141,8 +141,9 @@
 }
 .btn-secondary:hover { background: var(--surface-hover); }
 
-/* App privacy layout – content .header is the app title block, not the site nav */
-.app-privacy-page .page .header {
+/* App privacy layout – content header block, not the site nav */
+.app-privacy-page .page .header,
+.app-privacy-page .page .policy-header {
   position: static;
   display: flex;
   gap: 18px;
@@ -247,8 +248,11 @@ body.policy-only .privacy-policy-section {
 
 @media (max-width: 768px) {
   .app-details-section, .app-privacy-section { padding: 62px 16px 44px; }
-  .app-header, .app-privacy-page .page .header { flex-direction: column; align-items: flex-start; }
-  .app-privacy-page .page .header { align-items: center; text-align: center; }
+  .app-header,
+  .app-privacy-page .page .header,
+  .app-privacy-page .page .policy-header { flex-direction: column; align-items: flex-start; }
+  .app-privacy-page .page .header,
+  .app-privacy-page .page .policy-header { align-items: center; text-align: center; }
   .app-title { font-size: 1.8rem; }
   .app-description { font-size: 0.95rem; }
   .app-card h2, .app-card h3 { font-size: 1.08rem; }

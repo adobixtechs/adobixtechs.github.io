@@ -16,176 +16,397 @@
   <link href="../adobix_assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../adobix_assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="../adobix_assets/css/main.css" rel="stylesheet">
-  <link href="policy-pages.css" rel="stylesheet">
+  <style>
+    /* Enhanced theming for Phone Pro - Green/Phone theme */
+    :root {
+      --pp-primary: #059669;
+      --pp-primary-light: #34d399;
+      --pp-primary-dark: #047857;
+      --pp-primary-soft: rgba(5, 150, 105, 0.1);
+      --pp-bg: #ecfdf5;
+      --pp-surface: #ffffff;
+      --pp-border: #d1fae5;
+      --pp-text: #064e3b;
+      --pp-text-secondary: #374151;
+      --pp-text-muted: #6b7280;
+      --pp-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      --pp-radius: 24px;
+    }
+
+    [data-theme="dark"] {
+      --pp-primary: #34d399;
+      --pp-primary-light: #6ee7b7;
+      --pp-primary-dark: #059669;
+      --pp-primary-soft: rgba(52, 211, 153, 0.12);
+      --pp-bg: #0a0c12;
+      --pp-surface: #141822;
+      --pp-border: #1e3a2f;
+      --pp-text: #ecfdf5;
+      --pp-text-secondary: #cbd5e1;
+      --pp-text-muted: #94a3b8;
+    }
+
+    body.app-privacy-page {
+      background: var(--pp-bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--pp-text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main {
+      padding: 2rem 1rem;
+    }
+
+    .app-privacy-section {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    /* Header - stable positioning */
+    .policy-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      background: var(--pp-surface);
+      border-radius: var(--pp-radius);
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      border: 1px solid var(--pp-border);
+      box-shadow: var(--pp-shadow);
+    }
+
+    .header-icon {
+      flex-shrink: 0;
+    }
+
+    .header-icon img {
+      width: 76px;
+      height: 76px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 2px solid var(--pp-primary-light);
+      display: block;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .header-text h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      margin: 0 0 6px 0;
+      color: var(--pp-text);
+      letter-spacing: -0.3px;
+      line-height: 1.3;
+    }
+
+    .meta {
+      color: var(--pp-primary);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--pp-surface);
+      border: 1px solid var(--pp-border);
+      border-radius: 20px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--pp-primary-light);
+      box-shadow: 0 8px 24px rgba(5, 150, 105, 0.08);
+    }
+
+    .card h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 18px 0;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--pp-primary-soft);
+      display: inline-block;
+      color: var(--pp-text);
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 20px 0 12px 0;
+      color: var(--pp-primary);
+    }
+
+    .card p {
+      color: var(--pp-text-secondary);
+      margin: 0 0 14px 0;
+      font-size: 0.95rem;
+    }
+
+    .card ul {
+      margin: 10px 0 14px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .card li {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: var(--pp-text-secondary);
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .card li::before {
+      content: "📞";
+      position: absolute;
+      left: 0;
+      color: var(--pp-primary);
+      font-size: 0.85rem;
+    }
+
+    .card li strong {
+      color: var(--pp-text);
+      font-weight: 600;
+    }
+
+    /* Link styling */
+    a {
+      color: var(--pp-primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--pp-primary-dark);
+      text-decoration: underline;
+    }
+
+    /* Footer note */
+    .footer-note {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--pp-border);
+      font-size: 0.8rem;
+      text-align: center;
+      color: var(--pp-text-muted);
+    }
+
+    /* Responsive - title stays stable */
+    @media (max-width: 680px) {
+      .main {
+        padding: 1.5rem 1rem;
+      }
+      .policy-header {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 16px;
+      }
+      .header-icon img {
+        width: 60px;
+        height: 60px;
+      }
+      .header-text h1 {
+        font-size: 1.35rem;
+      }
+      .card {
+        padding: 20px;
+      }
+      .card h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .policy-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .header-text h1 {
+        text-align: center;
+      }
+      .card li::before {
+        left: 4px;
+      }
+    }
+  </style>
 </head>
 
 <body class="app-privacy-page">
-  <main class="main">
-    <section class="app-privacy-section">
-      <div class="page app-privacy-page">
-    <div class="header">
-      <div class="header-icon">
-        <img src="../adobix_assets/img/projects/phone-pro.png" alt="Phone Pro – Call Manager icon">
+<main class="main">
+  <section class="app-privacy-section">
+    <div class="page app-privacy-page">
+      <div class="policy-header">
+        <div class="header-icon">
+          <img src="../adobix_assets/img/projects/phone-pro.png" alt="Phone Pro – Call Manager icon" onerror="this.src='https://placehold.co/400x400?text=Phone+Pro';">
+        </div>
+        <div class="header-text">
+          <h1>Phone Pro – Call Manager Privacy Policy</h1>
+          <p class="meta">Last Updated: April 14, 2026</p>
+        </div>
       </div>
-      <div class="header-text">
-        <h1>Phone Pro – Call Manager Privacy Policy</h1>
-        <p class="meta">Last Updated: April 14, 2026</p>
+
+      <div class="card">
+        <h2>Introduction</h2>
+        <p>
+          This Privacy Policy describes how AdobixTech ("we", "our", or "us") collects, uses, and protects your
+          information when you use the <strong>Phone Pro – Call Manager</strong> mobile application ("App").
+          Phone Pro – Call Manager is developed by AdobixTech. By using the App, you agree to this policy.
+        </p>
       </div>
+
+      <div class="card">
+        <h2>1. Information the App Uses</h2>
+
+        <h3>1.1 Contact Information</h3>
+        <p>The App accesses your device's contact list to provide dialer and contact management. This may include:</p>
+        <ul>
+          <li>Contact names and phone numbers</li>
+          <li>Contact photos (if stored in your contacts)</li>
+          <li>Email addresses and other contact details</li>
+          <li>Company, job title, and notes</li>
+        </ul>
+
+        <h3>1.2 Call Information</h3>
+        <p>To provide call and call‑history features, the App uses:</p>
+        <ul>
+          <li>Call history (incoming, outgoing, missed)</li>
+          <li>Phone numbers and call duration</li>
+          <li>Timestamps and phone state (for example, to show incoming calls)</li>
+        </ul>
+
+        <h3>1.3 In‑Call Voice Visualization</h3>
+        <p>
+          During a call, the App may use the microphone (with your permission) only to display a voice‑level
+          visualization on the call screen. This is processed in real time on your device only; no audio is recorded,
+          stored, or transmitted.
+        </p>
       </div>
-    </div>
 
-    <div class="card">
-      <h2>Introduction</h2>
-      <p>
-        This Privacy Policy describes how AdobixTech ("we", "our", or "us") collects, uses, and protects your
-        information when you use the <strong>Phone Pro – Call Manager</strong> mobile application ("App").
-        Phone Pro – Call Manager is developed by AdobixTech. By using the App, you agree to this policy.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>1. Information the App Uses</h2>
-
-      <h3>1.1 Contact Information</h3>
-      <p>The App accesses your device's contact list to provide dialer and contact management. This may include:</p>
-      <ul>
-        <li>Contact names and phone numbers</li>
-        <li>Contact photos (if stored in your contacts)</li>
-        <li>Email addresses and other contact details</li>
-        <li>Company, job title, and notes</li>
-      </ul>
-
-      <h3>1.2 Call Information</h3>
-      <p>To provide call and call‑history features, the App uses:</p>
-      <ul>
-        <li>Call history (incoming, outgoing, missed)</li>
-        <li>Phone numbers and call duration</li>
-        <li>Timestamps and phone state (for example, to show incoming calls)</li>
-      </ul>
-
-      <h3>1.3 In‑Call Voice Visualization</h3>
-      <p>
-        During a call, the App may use the microphone (with your permission) only to display a voice‑level
-        visualization on the call screen. This is processed in real time on your device only; no audio is recorded,
-        stored, or transmitted.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>2. How We Use This Information</h2>
-      <p>We use the above information solely to:</p>
-      <ul>
-        <li>Provide dialer, contact management, and call history</li>
-        <li>Display and manage incoming/outgoing calls and the in‑call screen</li>
-        <li>Support T9 search, favorites, and contact organization</li>
-        <li>Show reminders and notifications you set (for example, call reminders)</li>
-        <li>Improve your experience within the App</li>
-      </ul>
-      <p>
-        We do <strong>not</strong> use your data for advertising, profiling, or selling to third parties.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>3. Data Storage and Sharing</h2>
-      <ul>
-        <li><strong>Local only:</strong> Contact and call data stays on your device. We do not upload it to our servers
-          or third parties.</li>
-        <li><strong>No analytics:</strong> We do not use third‑party analytics, crash reporting, or advertising SDKs. We
-          do not collect usage statistics or crash reports from the App.</li>
-        <li><strong>No selling:</strong> We do not sell, rent, or trade your personal information.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>4. Permissions We Request</h2>
-      <p>The App may request these permissions so features work correctly:</p>
-      <ul>
-        <li><strong>READ_CONTACTS</strong> – To display and manage your contact list</li>
-        <li><strong>WRITE_CONTACTS</strong> – To add, edit, or delete contacts</li>
-        <li><strong>CALL_PHONE</strong> – To initiate phone calls from the App</li>
-        <li><strong>READ_CALL_LOG</strong> – To display call history and recent calls</li>
-        <li><strong>READ_PHONE_STATE</strong> – To detect incoming calls and show the in‑call screen</li>
-        <li><strong>MANAGE_OWN_CALLS</strong> – To manage your calls (for example, answer, reject, hold)</li>
-        <li><strong>RECORD_AUDIO</strong> – For in‑call voice‑level visualization only (no recording or storage)</li>
-        <li><strong>POST_NOTIFICATIONS</strong> – To show call and reminder notifications</li>
-        <li><strong>BLUETOOTH / BLUETOOTH_CONNECT</strong> – To use Bluetooth devices during calls</li>
-        <li><strong>VIBRATE</strong> – For vibration on incoming calls and alerts</li>
-        <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_PHONE_CALL</strong> – To display and control ongoing calls</li>
-        <li><strong>SCHEDULE_EXACT_ALARM / USE_EXACT_ALARM</strong> – To trigger reminder notifications at the set time</li>
-      </ul>
-      <p>
-        We do <strong>not</strong> request Camera or SMS permissions. "Send message" in the App only opens your default
-        messaging app; we do not read or send SMS.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>5. Data Retention</h2>
-      <p>
-        Contact and call data remains on your device for as long as the App is installed and you do not delete it.
-        You can remove data by:
-      </p>
-      <ul>
-        <li>Uninstalling the App</li>
-        <li>Clearing the App's data in your device settings</li>
-        <li>Deleting or editing contacts and call history within the App where supported</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>6. Your Rights</h2>
-      <p>You can:</p>
-      <ul>
-        <li>Access and correct your contacts and call data on your device</li>
-        <li>Withdraw permissions in your device settings (some features may stop working)</li>
-        <li>Delete data by clearing App data or uninstalling the App</li>
-      </ul>
-      <p>
-        If you are in a region with extra data rights (for example, GDPR), you may have additional rights to access,
-        correct, or delete personal data. Contact us using the details below to exercise them.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>7. Children's Privacy</h2>
-      <p>
-        The App is not intended for children under 13. We do not knowingly collect personal information from children
-        under 13. If you believe a child has provided us with personal information, please contact us and we will take
-        steps to delete it.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>8. Changes to This Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. The "Last updated" date at the top will change when we do.
-        Continued use of the App after changes means you accept the updated policy. We recommend checking this page
-        periodically.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>9. Contact Us</h2>
-      <p>
-        If you have questions about this Privacy Policy or our data practices, contact us at:
-      </p>
-      <p>
-        <strong>AdobixTech</strong><br>
-        Email:
-        <a href="mailto:info@adobixtech.in" style="color: var(--accent); text-decoration: none;">
-          info@adobixtech.in
-        </a>
-      </p>
-      <p class="footer-note">
-        Phone Pro – Call Manager is developed by AdobixTech.
-      </p>
-    </div>
-
+      <div class="card">
+        <h2>2. How We Use This Information</h2>
+        <p>We use the above information solely to:</p>
+        <ul>
+          <li>Provide dialer, contact management, and call history</li>
+          <li>Display and manage incoming/outgoing calls and the in‑call screen</li>
+          <li>Support T9 search, favorites, and contact organization</li>
+          <li>Show reminders and notifications you set (for example, call reminders)</li>
+          <li>Improve your experience within the App</li>
+        </ul>
+        <p>
+          We do <strong>not</strong> use your data for advertising, profiling, or selling to third parties.
+        </p>
       </div>
-    </section>
-  </main>
-  <script src="policy-ui.js"></script>
+
+      <div class="card">
+        <h2>3. Data Storage and Sharing</h2>
+        <ul>
+          <li><strong>Local only:</strong> Contact and call data stays on your device. We do not upload it to our servers
+            or third parties.</li>
+          <li><strong>No analytics:</strong> We do not use third‑party analytics, crash reporting, or advertising SDKs. We
+            do not collect usage statistics or crash reports from the App.</li>
+          <li><strong>No selling:</strong> We do not sell, rent, or trade your personal information.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>4. Permissions We Request</h2>
+        <p>The App may request these permissions so features work correctly:</p>
+        <ul>
+          <li><strong>READ_CONTACTS</strong> – To display and manage your contact list</li>
+          <li><strong>WRITE_CONTACTS</strong> – To add, edit, or delete contacts</li>
+          <li><strong>CALL_PHONE</strong> – To initiate phone calls from the App</li>
+          <li><strong>READ_CALL_LOG</strong> – To display call history and recent calls</li>
+          <li><strong>READ_PHONE_STATE</strong> – To detect incoming calls and show the in‑call screen</li>
+          <li><strong>MANAGE_OWN_CALLS</strong> – To manage your calls (for example, answer, reject, hold)</li>
+          <li><strong>RECORD_AUDIO</strong> – For in‑call voice‑level visualization only (no recording or storage)</li>
+          <li><strong>POST_NOTIFICATIONS</strong> – To show call and reminder notifications</li>
+          <li><strong>BLUETOOTH / BLUETOOTH_CONNECT</strong> – To use Bluetooth devices during calls</li>
+          <li><strong>VIBRATE</strong> – For vibration on incoming calls and alerts</li>
+          <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_PHONE_CALL</strong> – To display and control ongoing calls</li>
+          <li><strong>SCHEDULE_EXACT_ALARM / USE_EXACT_ALARM</strong> – To trigger reminder notifications at the set time</li>
+        </ul>
+        <p>
+          We do <strong>not</strong> request Camera or SMS permissions. "Send message" in the App only opens your default
+          messaging app; we do not read or send SMS.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>5. Data Retention</h2>
+        <p>
+          Contact and call data remains on your device for as long as the App is installed and you do not delete it.
+          You can remove data by:
+        </p>
+        <ul>
+          <li>Uninstalling the App</li>
+          <li>Clearing the App's data in your device settings</li>
+          <li>Deleting or editing contacts and call history within the App where supported</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>6. Your Rights</h2>
+        <p>You can:</p>
+        <ul>
+          <li>Access and correct your contacts and call data on your device</li>
+          <li>Withdraw permissions in your device settings (some features may stop working)</li>
+          <li>Delete data by clearing App data or uninstalling the App</li>
+        </ul>
+        <p>
+          If you are in a region with extra data rights (for example, GDPR), you may have additional rights to access,
+          correct, or delete personal data. Contact us using the details below to exercise them.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>7. Children's Privacy</h2>
+        <p>
+          The App is not intended for children under 13. We do not knowingly collect personal information from children
+          under 13. If you believe a child has provided us with personal information, please contact us and we will take
+          steps to delete it.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>8. Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. The "Last updated" date at the top will change when we do.
+          Continued use of the App after changes means you accept the updated policy. We recommend checking this page
+          periodically.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>9. Contact Us</h2>
+        <p>
+          If you have questions about this Privacy Policy or our data practices, contact us at:
+        </p>
+        <p>
+          <strong>AdobixTech</strong><br>
+          Email:
+          <a href="mailto:info@adobixtech.in">
+            info@adobixtech.in
+          </a>
+        </p>
+        <p class="footer-note">
+          Phone Pro – Call Manager is developed by AdobixTech.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</main>
+<script src="policy-ui.js"></script>
 </body>
 </html>
-

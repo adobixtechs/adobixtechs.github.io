@@ -15,116 +15,363 @@
   <link href="../adobix_assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../adobix_assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="../adobix_assets/css/main.css" rel="stylesheet">
-  <link href="policy-pages.css" rel="stylesheet">
+  <style>
+    /* Enhanced theming for Focus Mode - Indigo/Deep Blue theme */
+    :root {
+      --fm-primary: #4f46e5;
+      --fm-primary-light: #6366f1;
+      --fm-primary-dark: #4338ca;
+      --fm-primary-soft: rgba(79, 70, 229, 0.1);
+      --fm-bg: #f5f3ff;
+      --fm-surface: #ffffff;
+      --fm-border: #e0e7ff;
+      --fm-text: #1e1b4b;
+      --fm-text-secondary: #4338ca;
+      --fm-text-muted: #6366f1;
+      --fm-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      --fm-radius: 24px;
+    }
+
+    [data-theme="dark"] {
+      --fm-primary: #818cf8;
+      --fm-primary-light: #a5b4fc;
+      --fm-primary-dark: #6366f1;
+      --fm-primary-soft: rgba(129, 140, 248, 0.12);
+      --fm-bg: #0a0c12;
+      --fm-surface: #141822;
+      --fm-border: #2d2a4a;
+      --fm-text: #f1f5f9;
+      --fm-text-secondary: #cbd5e1;
+      --fm-text-muted: #94a3b8;
+    }
+
+    body.app-privacy-page {
+      background: var(--fm-bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--fm-text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main {
+      padding: 2rem 1rem;
+    }
+
+    .app-privacy-section {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    /* Header - stable positioning */
+    .policy-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      background: var(--fm-surface);
+      border-radius: var(--fm-radius);
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      border: 1px solid var(--fm-border);
+      box-shadow: var(--fm-shadow);
+    }
+
+    .icon {
+      flex-shrink: 0;
+    }
+
+    .icon img {
+      width: 76px;
+      height: 76px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 2px solid var(--fm-primary-light);
+      display: block;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .header-text h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      margin: 0 0 6px 0;
+      color: var(--fm-text);
+      letter-spacing: -0.3px;
+      line-height: 1.3;
+    }
+
+    .meta {
+      color: var(--fm-primary);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--fm-surface);
+      border: 1px solid var(--fm-border);
+      border-radius: 20px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--fm-primary-light);
+      box-shadow: 0 8px 24px rgba(79, 70, 229, 0.08);
+    }
+
+    .card h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 18px 0;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--fm-primary-soft);
+      display: inline-block;
+      color: var(--fm-text);
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 20px 0 12px 0;
+      color: var(--fm-primary);
+    }
+
+    .card p {
+      color: var(--fm-text-secondary);
+      margin: 0 0 14px 0;
+      font-size: 0.95rem;
+    }
+
+    .card ul {
+      margin: 10px 0 14px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .card li {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: var(--fm-text-secondary);
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .card li::before {
+      content: "⏱️";
+      position: absolute;
+      left: 0;
+      color: var(--fm-primary);
+      font-size: 0.85rem;
+    }
+
+    .card li strong {
+      color: var(--fm-text);
+      font-weight: 600;
+    }
+
+    /* Link styling */
+    a {
+      color: var(--fm-primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--fm-primary-dark);
+      text-decoration: underline;
+    }
+
+    /* Back link specific */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--fm-surface);
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid var(--fm-border);
+      margin-top: 8px;
+      transition: all 0.2s;
+    }
+
+    .back-link:hover {
+      border-color: var(--fm-primary);
+      transform: translateX(-3px);
+      text-decoration: none;
+    }
+
+    /* Footer note */
+    .footer-note {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--fm-border);
+      font-size: 0.8rem;
+      text-align: center;
+      color: var(--fm-text-muted);
+    }
+
+    /* Responsive - title stays stable */
+    @media (max-width: 680px) {
+      .main {
+        padding: 1.5rem 1rem;
+      }
+      .policy-header {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 16px;
+      }
+      .icon img {
+        width: 60px;
+        height: 60px;
+      }
+      .header-text h1 {
+        font-size: 1.35rem;
+      }
+      .card {
+        padding: 20px;
+      }
+      .card h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .policy-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .header-text h1 {
+        text-align: center;
+      }
+      .card li::before {
+        left: 4px;
+      }
+      .back-link {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body class="app-privacy-page">
-  <main class="main">
-    <section class="app-privacy-section">
-      <div class="page app-privacy-page">
-    <div class="header">
-      <div class="icon">
-        <img src="../adobix_assets/img/projects/focus-mode.png" alt="Focus Mode icon">
+<main class="main">
+  <section class="app-privacy-section">
+    <div class="page app-privacy-page">
+      <div class="policy-header">
+        <div class="icon">
+          <img src="../adobix_assets/img/projects/focus-mode.png" alt="Focus Mode icon" onerror="this.src='https://placehold.co/400x400?text=Focus+Mode';">
+        </div>
+        <div class="header-text">
+          <h1>Focus Mode – Privacy Policy</h1>
+          <p class="meta">Last Updated: April 14, 2026</p>
+        </div>
       </div>
-      <div class="header-text">
-        <h1>Focus Mode – Privacy Policy</h1>
-        <p class="meta">Last Updated: April 14, 2026</p>
+
+      <div class="card">
+        <h2>Introduction</h2>
+        <p>
+          Focus Mode is developed by AdobixTech. We collect and store only the information needed to run focus sessions
+          and show you simple statistics. We do not use your data for advertising or selling to others.
+        </p>
       </div>
-    </div>
 
-    <div class="card">
-      <h2>Introduction</h2>
-      <p>
-        Focus Mode is developed by AdobixTech. We collect and store only the information needed to run focus sessions
-        and show you simple statistics. We do not use your data for advertising or selling to others.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Information Stored on Your Device</h2>
-      <ul>
-        <li>Timer settings such as focus length and break length</li>
-        <li>History of completed focus sessions (for example, number of sessions and duration)</li>
-        <li>Notification preferences for session start and end</li>
-      </ul>
-      <h3>What Focus Mode does not collect</h3>
-      <ul>
-        <li>No content of what you are working on</li>
-        <li>No files, documents, or notes</li>
-        <li>No personal contacts, messages, or photos</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>How We Use This Information</h2>
-      <p>We use the data stored on your device only to:</p>
-      <ul>
-        <li>Run accurate timers for focus and break periods</li>
-        <li>Show basic statistics, such as how many sessions you completed</li>
-        <li>Send local notifications when a session ends or a break finishes</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Permissions</h2>
-      <p>Focus Mode may request these permissions:</p>
-      <ul>
-        <li><strong>Notifications</strong> – to inform you when focus or break sessions start and end</li>
-        <li><strong>Foreground service</strong> – to keep the timer running reliably even when the app is in the background</li>
-      </ul>
-      <p>You can turn these permissions off at any time in your device settings, but timers or alerts may stop working correctly.</p>
-    </div>
-
-    <div class="card">
-      <h2>Storage and Sharing</h2>
-      <ul>
-        <li>Your session history and settings are stored locally on your device.</li>
-        <li>If your device uses system backups, this data may be included in those backups.</li>
-        <li>We may receive anonymous crash reports or diagnostics to improve stability.</li>
-        <li>We do not sell, rent, or trade any personal information.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Your Choices</h2>
-      <ul>
-        <li>Change or reset your timer settings at any time</li>
-        <li>Clear app data from system settings to remove stored history</li>
-        <li>Uninstall Focus Mode to delete the app and its data from your device</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Children’s Privacy</h2>
-      <p>
-        Focus Mode is not aimed at children under 13. We do not knowingly collect personal information about children.
-        If you believe a child has used the app and provided personal data, please contact us.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Changes to This Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. If we make important changes, we will update this page. By
-        continuing to use Focus Mode after updates, you agree to the revised policy.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Contact Us</h2>
-      <p>If you have any questions about this Privacy Policy, please contact:</p>
-      <p>
-        <strong>AdobixTech</strong><br>
-        Email:
-        <a href="mailto:info@adobixtech.in" style="color:#38bdf8;text-decoration:none;">info@adobixtech.in</a>
-      </p>
-      <p class="footer-note">Focus Mode is developed by AdobixTech.</p>
-    </div>
-
-    <a href="details/focus-mode-details.html" class="back-link">← Back to Focus Mode details</a>
+      <div class="card">
+        <h2>Information Stored on Your Device</h2>
+        <ul>
+          <li>Timer settings such as focus length and break length</li>
+          <li>History of completed focus sessions (for example, number of sessions and duration)</li>
+          <li>Notification preferences for session start and end</li>
+        </ul>
+        <h3>What Focus Mode does not collect</h3>
+        <ul>
+          <li>No content of what you are working on</li>
+          <li>No files, documents, or notes</li>
+          <li>No personal contacts, messages, or photos</li>
+        </ul>
       </div>
-    </section>
-  </main>
-  <script src="policy-ui.js"></script>
+
+      <div class="card">
+        <h2>How We Use This Information</h2>
+        <p>We use the data stored on your device only to:</p>
+        <ul>
+          <li>Run accurate timers for focus and break periods</li>
+          <li>Show basic statistics, such as how many sessions you completed</li>
+          <li>Send local notifications when a session ends or a break finishes</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Permissions</h2>
+        <p>Focus Mode may request these permissions:</p>
+        <ul>
+          <li><strong>Notifications</strong> – to inform you when focus or break sessions start and end</li>
+          <li><strong>Foreground service</strong> – to keep the timer running reliably even when the app is in the background</li>
+        </ul>
+        <p>You can turn these permissions off at any time in your device settings, but timers or alerts may stop working correctly.</p>
+      </div>
+
+      <div class="card">
+        <h2>Storage and Sharing</h2>
+        <ul>
+          <li>Your session history and settings are stored locally on your device.</li>
+          <li>If your device uses system backups, this data may be included in those backups.</li>
+          <li>We may receive anonymous crash reports or diagnostics to improve stability.</li>
+          <li>We do not sell, rent, or trade any personal information.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Your Choices</h2>
+        <ul>
+          <li>Change or reset your timer settings at any time</li>
+          <li>Clear app data from system settings to remove stored history</li>
+          <li>Uninstall Focus Mode to delete the app and its data from your device</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Children’s Privacy</h2>
+        <p>
+          Focus Mode is not aimed at children under 13. We do not knowingly collect personal information about children.
+          If you believe a child has used the app and provided personal data, please contact us.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. If we make important changes, we will update this page. By
+          continuing to use Focus Mode after updates, you agree to the revised policy.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact:</p>
+        <p>
+          <strong>AdobixTech</strong><br>
+          Email:
+          <a href="mailto:info@adobixtech.in">info@adobixtech.in</a>
+        </p>
+        <p class="footer-note">Focus Mode is developed by AdobixTech.</p>
+      </div>
+
+      <a href="details/focus-mode-details.html" class="back-link">← Back to Focus Mode details</a>
+    </div>
+  </section>
+</main>
+<script src="policy-ui.js"></script>
 </body>
 </html>
-
